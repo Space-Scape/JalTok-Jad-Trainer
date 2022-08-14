@@ -1,0 +1,17 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "MeleeAnim"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Melee:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 3.66963, 6.17531 ), Vector3( 0, 0.096309, 6.17531 ), Vector3( 0, 3.66963, 6.17531 ) ]
+}

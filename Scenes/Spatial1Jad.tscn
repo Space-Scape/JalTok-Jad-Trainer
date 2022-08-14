@@ -1,0 +1,1779 @@
+[gd_scene load_steps=126 format=2]
+
+[ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/grabber.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/MaxHit.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/border.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Hitsplat.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/PlayerAnim.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/PrayIcon/mageIcon.png" type="Texture" id=8]
+[ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=9]
+[ext_resource path="res://runescape_uf.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Scripts/InvOptionButton.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/infernoFloor.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/RedemButton.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=14]
+[ext_resource path="res://Sprites/cameraIconHi.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/cameraIconOff.png" type="Texture" id=16]
+[ext_resource path="res://SFX/rangeOn.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sprites/cameraIconOn.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/CamButton.gd" type="Script" id=19]
+[ext_resource path="res://SFX/prayOff.wav" type="AudioStream" id=20]
+[ext_resource path="res://SFX/mageOn.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sprites/greenBar.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/PrayTab/PrayOff.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/grabberOff.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/hitsplatRed.png" type="Texture" id=25]
+[ext_resource path="res://Scripts/HealerHitNum.gd" type="Script" id=26]
+[ext_resource path="res://Sprites/redBar.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/InvTab/InvBG.png" type="Texture" id=28]
+[ext_resource path="res://Font/rsFont.tres" type="DynamicFont" id=34]
+[ext_resource path="res://Scripts/HitsplatNum.gd" type="Script" id=35]
+[ext_resource path="res://Scripts/InvButton.gd" type="Script" id=41]
+[ext_resource path="res://Sprites/PrayTab/SharpEye.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/TopTabPrayer.png" type="Texture" id=43]
+[ext_resource path="res://Scripts/PrayerButton.gd" type="Script" id=44]
+[ext_resource path="res://Sprites/PotSheet.png" type="Texture" id=45]
+[ext_resource path="res://Scripts/BrewButton.gd" type="Script" id=46]
+[ext_resource path="res://Scripts/ResButton.gd" type="Script" id=47]
+[ext_resource path="res://Sprites/Column.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/Bp.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/brew.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/playerBillboard2.png" type="Texture" id=51]
+[ext_resource path="res://SFX/EagleEye.wav" type="AudioStream" id=52]
+[ext_resource path="res://SFX/PrayDrain.wav" type="AudioStream" id=53]
+[ext_resource path="res://SFX/SharpEye.wav" type="AudioStream" id=54]
+[ext_resource path="res://SFX/Rigour.wav" type="AudioStream" id=55]
+[ext_resource path="res://SFX/HawkEye.wav" type="AudioStream" id=56]
+[ext_resource path="res://Sprites/PurpleSweet.png" type="Texture" id=57]
+[ext_resource path="res://Scripts/Sweets.gd" type="Script" id=58]
+[ext_resource path="res://Scripts/TickSystem.gd" type="Script" id=59]
+[ext_resource path="res://Scripts/AttackSpeed.gd" type="Script" id=62]
+[ext_resource path="res://SFX/Potion.wav" type="AudioStream" id=63]
+[ext_resource path="res://Scripts/PlayerMove.gd" type="Script" id=64]
+[ext_resource path="res://Scripts/JadSpawn.gd" type="Script" id=66]
+[ext_resource path="res://Sprites/Acb.png" type="Texture" id=84]
+[ext_resource path="res://Sprites/BoFa.png" type="Texture" id=85]
+[ext_resource path="res://Sprites/RCB.png" type="Texture" id=86]
+[ext_resource path="res://Sprites/Hp.png" type="Texture" id=2409]
+[ext_resource path="res://Sprites/prayer.png" type="Texture" id=2410]
+[ext_resource path="res://Sprites/Orb.png" type="Texture" id=2411]
+[ext_resource path="res://Sprites/OrbContainer.png" type="Texture" id=2412]
+[ext_resource path="res://Sprites/OrbBg.png" type="Texture" id=2413]
+[ext_resource path="res://Scripts/PrayerBar.gd" type="Script" id=2414]
+[ext_resource path="res://Scripts/HpOrb.gd" type="Script" id=2415]
+[ext_resource path="res://Scripts/Reset.gd" type="Script" id=2416]
+[ext_resource path="res://Scenes/Spatial1Jad.tres" type="StyleBox" id=2417]
+[ext_resource path="res://Sprites/Backpack.png" type="Texture" id=2418]
+[ext_resource path="res://Sprites/Lvl.png" type="Texture" id=2419]
+[ext_resource path="res://Scripts/OptionButton.gd" type="Script" id=2420]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 546, 55 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 554, 55 )
+
+[sub_resource type="ViewportTexture" id=3]
+flags = 4
+viewport_path = NodePath("ViewportContainer2/Viewport2")
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 3
+atlas = ExtResource( 84 )
+region = Rect2( 0, 0, 325, 677 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 3
+atlas = ExtResource( 84 )
+region = Rect2( 325, 0, 325, 677 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 3
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 3
+atlas = ExtResource( 85 )
+region = Rect2( 443, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 3
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 3
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 3
+atlas = ExtResource( 51 )
+region = Rect2( 353, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 3
+atlas = ExtResource( 51 )
+region = Rect2( 706, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 3
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 3
+atlas = ExtResource( 86 )
+region = Rect2( 0, 0, 518, 814 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 3
+atlas = ExtResource( 86 )
+region = Rect2( 518, 0, 518, 814 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "ACB",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "BoFa",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "BP",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 10 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Tbow",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "RCB",
+"speed": 1.0
+} ]
+
+[sub_resource type="CapsuleShape" id=16]
+radius = 1.27213
+height = 2.42469
+
+[sub_resource type="CapsuleShape" id=17]
+radius = 1.33127
+height = 2.96457
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 93.1817, 30.5361, 58.2124 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 42 )
+region_rect = Rect2( 0, 0, 68, 68 )
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="InputEventAction" id=24]
+action = "Prayer"
+
+[sub_resource type="ShortCut" id=25]
+shortcut = SubResource( 24 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 45 )
+region = Rect2( 0, 80, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 45 )
+region = Rect2( 82, 80, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 45 )
+region = Rect2( 164, 80, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 45 )
+region = Rect2( 246, 80, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 45 )
+region = Rect2( 320, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 45 )
+region = Rect2( 0, 0, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 45 )
+region = Rect2( 82, 0, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 45 )
+region = Rect2( 164, 0, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 45 )
+region = Rect2( 246, 0, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 45 )
+region = Rect2( 320, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "Rest",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "Brew",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=37]
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 57 )
+region = Rect2( 0, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 57 )
+region = Rect2( 28, 0, 28, 24 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=41]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=42]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.622035, 0.622035 ), Vector2( 0.447214, 0.447214 ), Vector2( 0.622035, 0.622035 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.29144, 0.0, -3.13036 ]
+}
+
+[sub_resource type="DynamicFont" id=43]
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxTexture" id=44]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 42, 42 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 8.0
+margin_bottom = 8.0
+expand_margin_left = 4.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="Theme" id=45]
+PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/constants/hseparation = 4
+PopupMenu/constants/vseparation = 4
+PopupMenu/fonts/font = SubResource( 43 )
+PopupMenu/icons/checked = ExtResource( 3 )
+PopupMenu/icons/radio_checked = ExtResource( 3 )
+PopupMenu/icons/radio_unchecked = ExtResource( 24 )
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = ExtResource( 24 )
+PopupMenu/styles/hover = null
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = SubResource( 44 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
+
+[sub_resource type="StyleBoxFlat" id=46]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id=47]
+
+[sub_resource type="DynamicFont" id=48]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=49]
+
+[sub_resource type="StyleBoxFlat" id=50]
+bg_color = Color( 0.0862745, 0.0784314, 0.0901961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.556863, 0.556863, 0.556863, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 3
+
+[sub_resource type="DynamicFont" id=51]
+size = 32
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=52]
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=53]
+outline_size = 1
+extra_spacing_char = 1
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=54]
+content_margin_top = 4.0
+bg_color = Color( 0.0196078, 0.0235294, 0.0784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=55]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=56]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="Environment" id=57]
+background_mode = 1
+background_color = Color( 0.243137, 0.109804, 0.109804, 1 )
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.6696, 0 )
+script = ExtResource( 66 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 559.293, 410.675 ]
+}
+
+[node name="ViewportContainer2" type="ViewportContainer" parent="."]
+margin_left = 479.0
+margin_top = 1288.0
+margin_right = 879.0
+margin_bottom = 1438.0
+rect_scale = Vector2( 1, -1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport2" type="Viewport" parent="ViewportContainer2"]
+pause_mode = 2
+size = Vector2( 400, 150 )
+transparent_bg = true
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+gui_disable_input = true
+
+[node name="ProgressBar" type="ProgressBar" parent="ViewportContainer2/Viewport2"]
+pause_mode = 2
+margin_left = 29.502
+margin_top = 118.851
+margin_right = 141.502
+margin_bottom = 137.408
+rect_scale = Vector2( 3, 1.3 )
+mouse_filter = 2
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 99.0
+step = 1.0
+value = 99.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HitSplat" type="Sprite" parent="ViewportContainer2/Viewport2"]
+pause_mode = 2
+process_priority = 1
+visible = false
+position = Vector2( 346, 45 )
+rotation = 8.05154e-10
+scale = Vector2( 1.848, 1.243 )
+texture = ExtResource( 25 )
+script = ExtResource( 6 )
+
+[node name="HitsplatNum" type="RichTextLabel" parent="ViewportContainer2/Viewport2"]
+pause_mode = 2
+visible = false
+anchor_right = 0.698
+anchor_bottom = 0.035
+margin_left = 307.218
+margin_top = 74.243
+margin_right = 98.984
+margin_bottom = 198.993
+rect_scale = Vector2( 1, -1 )
+rect_clip_content = false
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = ExtResource( 34 )
+bbcode_enabled = true
+meta_underlined = false
+fit_content_height = true
+scroll_active = false
+script = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealerHitSplat" type="Sprite" parent="ViewportContainer2/Viewport2"]
+pause_mode = 2
+process_priority = 1
+position = Vector2( 56, 45 )
+rotation = 8.05154e-10
+scale = Vector2( 1.848, 1.243 )
+texture = ExtResource( 25 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 58.0005, 62.8958 )
+script = ExtResource( 6 )
+
+[node name="HealerNum" type="RichTextLabel" parent="ViewportContainer2/Viewport2"]
+pause_mode = 2
+anchor_right = 0.084
+anchor_bottom = 0.035
+margin_left = -30.0
+margin_top = 72.0
+margin_right = 101.523
+margin_bottom = 198.0
+rect_scale = Vector2( 1, -1 )
+rect_clip_content = false
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = ExtResource( 34 )
+bbcode_enabled = true
+meta_underlined = false
+fit_content_height = true
+scroll_active = false
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHPbarSprite" type="Sprite3D" parent="ViewportContainer2/Viewport2"]
+pause_mode = 2
+transform = Transform( -2.05082, 0.00191848, 0, -0.00254349, -2.71895, 0, 0, 0, 0.876284, -67.3447, 5.14198, -61.1115 )
+offset = Vector2( -4.548, -63.197 )
+billboard = 1
+texture = SubResource( 3 )
+script = ExtResource( 14 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite3D" parent="ViewportContainer2/Viewport2"]
+transform = Transform( 1.05722, 0, -0.146371, 0, 1.08163, 0, 0.15486, 0, 0.999265, -67.2474, 2.97678, -61.3896 )
+extra_cull_margin = 3523.44
+billboard = 2
+alpha_cut = 2
+frames = SubResource( 15 )
+animation = "BoFa"
+script = ExtResource( 7 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -67.3527, -38.8667, -61.3201 )
+input_ray_pickable = false
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 64 )
+
+[node name="PlayerCollider" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 0.0100206, 0.999442, -0.0318606, 0.000456363, 0.0318577, 0.999492, 0.99995, -0.01003, -0.000136912, 0.0768709, -1.19994, 0.0614834 )
+shape = SubResource( 16 )
+
+[node name="Player" type="Area" parent="KinematicBody"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Player"]
+transform = Transform( 1, -7.10459e-15, -6.99606e-15, 7.10459e-15, 0.0153931, 0.999882, -6.99606e-15, -0.999882, 0.0153931, 0.139404, -0.873016, -0.102947 )
+shape = SubResource( 17 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( -0.399999, 0, -6.03982e-08, 0, 0.4, 0, 6.03982e-08, 0, -0.399999, -67.3527, -35, -61.3201 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TrackballCamera" type="Camera" parent="Spatial"]
+transform = Transform( -2.50001, -1.88351e-07, 3.27142e-07, 0, 2.16657, 1.24739, -3.77489e-07, 1.2474, -2.16657, -9.35326, 78.6769, -96.2946 )
+cull_mask = 2148532223
+fov = 47.0409
+near = 0.01
+far = 1157.3
+script = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": ""
+}
+zoom_strength = 5.618
+zoom_minimum = -803
+zoom_maximum = 33333.0
+
+[node name="Floor" type="Spatial" parent="."]
+pause_mode = 2
+transform = Transform( -1.53769, 0, -1.34429e-07, 0, 1, 0, 1.34429e-07, 0, -1.53769, -15.5098, -36.304, 0 )
+
+[node name="Sprite3D24" type="Sprite3D" parent="Floor"]
+transform = Transform( -5.49022, -8.56302e-08, -1.47343e-13, 0, -5.41469e-09, 4.87628, -7.90262e-08, -4.96963, -8.55124e-06, 82.0337, -6.18654, 71.1934 )
+layers = 2147483652
+flip_h = true
+flip_v = true
+pixel_size = 0.0147
+double_sided = false
+alpha_cut = 1
+texture = ExtResource( 12 )
+
+[node name="Sprite3D25" type="Sprite3D" parent="Floor"]
+transform = Transform( -5.49022, -8.56302e-08, -1.47343e-13, 0, -5.41469e-09, 4.87628, -7.90263e-08, -4.96963, -8.55124e-06, -14.6208, -6.18654, 71.1934 )
+layers = 2147483652
+flip_h = true
+flip_v = true
+pixel_size = 0.0147
+double_sided = false
+alpha_cut = 1
+texture = ExtResource( 12 )
+
+[node name="Sprite3D26" type="Sprite3D" parent="Floor"]
+transform = Transform( -5.49022, -8.56303e-08, -1.47343e-13, 0, -5.41469e-09, 4.87628, -7.9026e-08, -4.96963, -8.55124e-06, 82.0337, -6.18654, 12.8123 )
+layers = 2147483652
+flip_h = true
+flip_v = true
+pixel_size = 0.0147
+double_sided = false
+alpha_cut = 1
+texture = ExtResource( 12 )
+
+[node name="Sprite3D27" type="Sprite3D" parent="Floor"]
+transform = Transform( -5.49022, -8.56302e-08, -1.47343e-13, 0, -5.41469e-09, 4.87628, -7.90261e-08, -4.96963, -8.55124e-06, -14.6208, -6.18654, 12.8123 )
+layers = 2147483652
+flip_h = true
+flip_v = true
+pixel_size = 0.0147
+double_sided = false
+alpha_cut = 1
+texture = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="FloorCollider" type="CollisionShape" parent="Floor/StaticBody"]
+transform = Transform( 0.999998, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999998, 32.6284, -36.9465, 41.8034 )
+shape = SubResource( 18 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.912106, 0.409955, 0, -0.409955, 0.912106, -53.3196, -9.31712, -18.1469 )
+light_energy = 0.92
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.861009, 0.50859, 0, -0.50859, -0.861009, -20.7085, 5.62858, -111.273 )
+light_energy = 0.65
+
+[node name="PrayNode" type="Node2D" parent="."]
+position = Vector2( 188.344, 100.071 )
+scale = Vector2( 1.67228, 1.67228 )
+z_index = 3
+
+[node name="Column2" type="TextureRect" parent="PrayNode"]
+pause_mode = 2
+margin_left = 1005.97
+margin_top = 294.0
+margin_right = 1035.97
+margin_bottom = 585.0
+texture = ExtResource( 48 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Column3" type="TextureRect" parent="PrayNode"]
+pause_mode = 2
+margin_left = 772.489
+margin_top = 294.0
+margin_right = 802.489
+margin_bottom = 585.0
+texture = ExtResource( 48 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrayPanel" type="TextureRect" parent="PrayNode"]
+margin_left = 799.241
+margin_top = 292.044
+margin_right = 1010.24
+margin_bottom = 580.044
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrayerIcon" type="Sprite3D" parent="PrayNode"]
+transform = Transform( 6.18165, 0, 0, 0, 6.18165, 0, 0, 0, 6.18165, -67.3127, 10.0504, -61.746 )
+billboard = 1
+texture = ExtResource( 8 )
+
+[node name="MageButton" type="Button" parent="PrayNode"]
+margin_left = 847.0
+margin_top = 426.464
+margin_right = 887.0
+margin_bottom = 462.464
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RangedButton" type="Button" parent="PrayNode"]
+margin_left = 889.0
+margin_top = 425.568
+margin_right = 925.0
+margin_bottom = 460.568
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeleeButton" type="Button" parent="PrayNode"]
+margin_left = 927.251
+margin_top = 426.912
+margin_right = 963.251
+margin_bottom = 461.912
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedemButton" type="Button" parent="PrayNode"]
+margin_left = 886.034
+margin_top = 461.671
+margin_right = 1032.03
+margin_bottom = 601.671
+rect_scale = Vector2( 0.285632, 0.285632 )
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SharpEye" type="Button" parent="PrayNode"]
+margin_left = 925.84
+margin_top = 308.149
+margin_right = 963.84
+margin_bottom = 346.149
+focus_mode = 0
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HawkEye" type="Button" parent="PrayNode"]
+margin_left = 842.0
+margin_top = 382.0
+margin_right = 892.0
+margin_bottom = 426.0
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EagleEye" type="Button" parent="PrayNode"]
+margin_left = 958.476
+margin_top = 420.467
+margin_right = 1001.48
+margin_bottom = 459.467
+rect_scale = Vector2( 1.20218, 1.20218 )
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rigour" type="Button" parent="PrayNode"]
+margin_left = 881.799
+margin_top = 496.869
+margin_right = 930.799
+margin_bottom = 544.869
+focus_mode = 0
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prayers" type="Node" parent="PrayNode"]
+script = ExtResource( 2 )
+
+[node name="TopTab" type="TextureRect" parent="PrayNode"]
+margin_left = 776.0
+margin_top = 254.0
+margin_right = 1034.0
+margin_bottom = 295.0
+texture = ExtResource( 43 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvButton" type="Button" parent="PrayNode/TopTab"]
+margin_left = 113.0
+margin_top = 1.0
+margin_right = 146.0
+margin_bottom = 41.0
+custom_styles/focus = SubResource( 23 )
+shortcut_in_tooltip = false
+action_mode = 0
+flat = true
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrayerButton" type="Button" parent="PrayNode/TopTab"]
+margin_left = 183.0
+margin_top = 1.0
+margin_right = 217.0
+margin_bottom = 41.0
+custom_styles/focus = SubResource( 23 )
+shortcut_in_tooltip = false
+action_mode = 0
+shortcut = SubResource( 25 )
+flat = true
+script = ExtResource( 44 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvBG" type="TextureRect" parent="PrayNode"]
+visible = false
+margin_left = 810.075
+margin_top = 305.356
+margin_right = 1000.08
+margin_bottom = 566.356
+texture = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brew1" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 36.3613, 21.7728 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Brew"
+
+[node name="Button" type="Button" parent="PrayNode/InvBG/Brew1"]
+margin_left = -40.0
+margin_top = -34.0
+margin_right = 32.0
+margin_bottom = 33.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brew2" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 78.8093, 21.7728 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Brew"
+
+[node name="Button2" type="Button" parent="PrayNode/InvBG/Brew2"]
+margin_left = -37.0
+margin_top = -34.0
+margin_right = 30.0
+margin_bottom = 33.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Brew3" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 118.242, 21.7728 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Brew"
+
+[node name="Button3" type="Button" parent="PrayNode/InvBG/Brew3"]
+margin_left = -37.0
+margin_top = -34.0
+margin_right = 30.0
+margin_bottom = 33.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Brew4" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 156.421, 21.7728 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Brew"
+
+[node name="Button4" type="Button" parent="PrayNode/InvBG/Brew4"]
+margin_left = -36.0
+margin_top = -34.0
+margin_right = 29.0
+margin_bottom = 33.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Rest1" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 36.3613, 70.2781 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Rest"
+
+[node name="Button5" type="Button" parent="PrayNode/InvBG/Rest1"]
+margin_left = -36.0
+margin_top = -41.0
+margin_right = 29.0
+margin_bottom = 26.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Rest2" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 78.8093, 70.2781 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Rest"
+
+[node name="Button6" type="Button" parent="PrayNode/InvBG/Rest2"]
+margin_left = -38.0
+margin_top = -41.0
+margin_right = 31.0
+margin_bottom = 26.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Rest3" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 118.242, 70.2781 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Rest"
+
+[node name="Button7" type="Button" parent="PrayNode/InvBG/Rest3"]
+margin_left = -39.0
+margin_top = -41.0
+margin_right = 31.0
+margin_bottom = 26.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Rest4" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 156.421, 70.2781 )
+scale = Vector2( 0.493247, 0.490615 )
+frames = SubResource( 36 )
+animation = "Rest"
+
+[node name="Button8" type="Button" parent="PrayNode/InvBG/Rest4"]
+margin_left = -35.0
+margin_top = -41.0
+margin_right = 27.0
+margin_bottom = 26.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Sweets" type="AnimatedSprite" parent="PrayNode/InvBG"]
+position = Vector2( 34.1071, 110.178 )
+scale = Vector2( 1.16059, 1.16059 )
+frames = SubResource( 40 )
+speed_scale = 2.0
+
+[node name="Button9" type="Button" parent="PrayNode/InvBG/Sweets"]
+margin_left = -15.0
+margin_top = -14.0
+margin_right = 14.0
+margin_bottom = 13.0
+focus_mode = 1
+custom_styles/focus = SubResource( 37 )
+enabled_focus_mode = 1
+flat = true
+script = ExtResource( 58 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="PrayNode/InvBG/Sweets"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Potion" type="AudioStreamPlayer" parent="PrayNode/InvBG"]
+stream = ExtResource( 63 )
+volume_db = 19.945
+
+[node name="Label" type="Label" parent="PrayNode"]
+margin_left = 785.0
+margin_top = -77.0956
+margin_right = 1085.0
+margin_bottom = 222.904
+rect_scale = Vector2( 0.622035, 0.622035 )
+rect_pivot_offset = Vector2( 161.906, 56.0449 )
+custom_fonts/font = SubResource( 41 )
+custom_colors/font_color = Color( 0.921569, 1, 0, 1 )
+text = "Join Lost Legion on OSRS!
+
+Special Thanks (Testing):
+Beer Monday
+Holytrowel
+BbyMole
+
+RSN: SpaceScape"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PrayNode/Label"]
+anims/TextAnim = SubResource( 42 )
+
+[node name="MagePray" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 21 )
+volume_db = 16.932
+
+[node name="RangePray" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 17 )
+volume_db = 19.185
+
+[node name="PrayOff" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 20 )
+volume_db = 17.165
+
+[node name="EagleEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 52 )
+volume_db = 10.097
+
+[node name="SharpEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 54 )
+volume_db = 10.097
+
+[node name="HawkEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 56 )
+volume_db = 10.097
+
+[node name="RigourSfx" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 55 )
+volume_db = 10.097
+
+[node name="PrayDrain" type="AudioStreamPlayer" parent="PrayNode"]
+stream = ExtResource( 53 )
+volume_db = 8.077
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="PrayNode"]
+layer = 2
+
+[node name="Inv" type="TextureRect" parent="PrayNode/CanvasLayer2"]
+anchor_left = -0.0553265
+anchor_top = -0.0281445
+anchor_right = -0.0553265
+anchor_bottom = -0.0281445
+margin_left = 1618.64
+margin_top = 381.233
+margin_right = 1643.64
+margin_bottom = 408.233
+rect_scale = Vector2( 2.80049, 2.80049 )
+texture = ExtResource( 2418 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="OptionButton" type="OptionButton" parent="PrayNode/CanvasLayer2/Inv"]
+anchor_left = -7.62939e-08
+anchor_top = 0.0135798
+anchor_bottom = 0.0506165
+margin_left = 30.2269
+margin_top = 4.70929
+margin_right = 76.2269
+margin_bottom = 22.7093
+rect_scale = Vector2( 0.783212, 0.920047 )
+theme = SubResource( 45 )
+custom_styles/hover = ExtResource( 2417 )
+custom_styles/pressed = SubResource( 46 )
+custom_styles/focus = SubResource( 47 )
+custom_styles/normal = ExtResource( 2417 )
+custom_fonts/font = SubResource( 48 )
+shortcut_in_tooltip = false
+text = "F1"
+align = 1
+items = [ "F1", null, false, 0, null, "F2", null, false, 1, null, "F3", null, false, 2, null, "F4", null, false, 3, null ]
+selected = 0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PrayerIcon2" type="TextureRect" parent="PrayNode/CanvasLayer2"]
+anchor_left = -0.0263893
+anchor_top = -0.0324354
+anchor_right = -0.0263893
+anchor_bottom = -0.0324354
+margin_left = 1757.31
+margin_top = 381.82
+margin_right = 1784.31
+margin_bottom = 406.82
+rect_scale = Vector2( 3.01147, 3.01147 )
+texture = ExtResource( 2410 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="OptionButton2" type="OptionButton" parent="PrayNode/CanvasLayer2/PrayerIcon2"]
+anchor_left = -0.104604
+anchor_top = 0.051628
+anchor_right = -0.104604
+anchor_bottom = 0.091628
+margin_left = 32.8243
+margin_top = 4.7093
+margin_right = 78.8243
+margin_bottom = 22.7093
+rect_scale = Vector2( 0.707901, 0.831579 )
+theme = SubResource( 45 )
+custom_styles/hover = ExtResource( 2417 )
+custom_styles/pressed = SubResource( 46 )
+custom_styles/focus = SubResource( 47 )
+custom_styles/normal = ExtResource( 2417 )
+custom_fonts/font = SubResource( 48 )
+shortcut_in_tooltip = false
+text = "F2"
+align = 1
+items = [ "F1", null, false, 0, null, "F2", null, false, 1, null, "F3", null, false, 2, null, "F4", null, false, 3, null ]
+selected = 1
+script = ExtResource( 2420 )
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PrayNode"]
+layer = -2
+
+[node name="LevelWindow" type="NinePatchRect" parent="PrayNode/CanvasLayer"]
+show_behind_parent = true
+anchor_left = -0.058208
+anchor_top = -0.032685
+anchor_right = -0.058208
+anchor_bottom = -0.031759
+margin_left = 1609.79
+margin_top = 364.895
+margin_right = 1770.79
+margin_bottom = 437.895
+rect_scale = Vector2( 2.56945, 2.56945 )
+mouse_filter = 1
+texture = ExtResource( 5 )
+region_rect = Rect2( 2.41528, 1.81439, 37.3471, 37.0155 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="HpIcon" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow"]
+margin_left = 4.86316
+margin_top = 41.6955
+margin_right = 32.8632
+margin_bottom = 66.6955
+texture = ExtResource( 2409 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HpLvl" type="LineEdit" parent="PrayNode/CanvasLayer/LevelWindow/HpIcon"]
+anchor_left = 1.17895
+anchor_top = 0.594216
+anchor_right = 2.53395
+anchor_bottom = 1.28122
+margin_left = 0.459999
+margin_top = -10.0657
+margin_right = 38.52
+margin_bottom = 8.75927
+rect_scale = Vector2( 0.516648, 0.516648 )
+custom_styles/focus = SubResource( 49 )
+custom_styles/normal = SubResource( 50 )
+custom_fonts/font = SubResource( 51 )
+custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
+align = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HpLvl2" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow/HpIcon"]
+margin_left = -0.266357
+margin_top = 11.2868
+margin_right = 14.7336
+margin_bottom = 25.2868
+texture = ExtResource( 2419 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PrayerIcon" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow"]
+margin_left = 83.7797
+margin_top = 40.596
+margin_right = 110.78
+margin_bottom = 65.596
+texture = ExtResource( 2410 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PrayerLvl" type="LineEdit" parent="PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
+anchor_left = 1.033
+anchor_top = 0.634016
+anchor_right = 2.26
+anchor_bottom = 1.21102
+margin_left = 4.44573
+margin_top = -9.78132
+margin_right = 47.3167
+margin_bottom = 11.7937
+rect_scale = Vector2( 0.516648, 0.516648 )
+custom_styles/focus = SubResource( 49 )
+custom_styles/normal = SubResource( 50 )
+custom_fonts/font = SubResource( 51 )
+custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
+text = "99"
+align = 1
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="PrayerLvl2" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
+margin_left = -0.399414
+margin_top = 11.9868
+margin_right = 14.6006
+margin_bottom = 25.9868
+texture = ExtResource( 2419 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="OrbContainer2" type="TextureRect" parent="PrayNode"]
+margin_left = 724.0
+margin_top = 110.0
+margin_right = 806.0
+margin_bottom = 159.0
+texture = ExtResource( 2412 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpBar" type="TextureProgress" parent="PrayNode/OrbContainer2"]
+modulate = Color( 0.85098, 0.129412, 0.129412, 1 )
+anchor_left = 0.489475
+anchor_top = 0.390669
+anchor_right = 0.513866
+anchor_bottom = 0.431486
+margin_left = -2.13696
+margin_top = -14.1428
+margin_right = 25.863
+margin_bottom = 13.8572
+rect_scale = Vector2( 1.30041, 1.30041 )
+max_value = 99.0
+value = 99.0
+rounded = true
+texture_under = ExtResource( 2413 )
+texture_progress = ExtResource( 2411 )
+fill_mode = 3
+nine_patch_stretch = true
+script = ExtResource( 2415 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PrayNode/OrbContainer2"]
+anchor_left = 0.325998
+anchor_top = 0.469706
+anchor_right = 0.341623
+anchor_bottom = 0.469706
+margin_left = -28.0
+margin_top = -2.0
+margin_right = 4.0
+margin_bottom = 24.0
+rect_scale = Vector2( 1.41128, 1.41128 )
+custom_fonts/normal_font = SubResource( 52 )
+bbcode_enabled = true
+visible_characters = 3
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="OrbContainer" type="TextureRect" parent="PrayNode"]
+margin_left = 701.582
+margin_top = 156.151
+margin_right = 783.582
+margin_bottom = 205.151
+texture = ExtResource( 2412 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PrayerBar" type="TextureProgress" parent="PrayNode/OrbContainer"]
+margin_left = 38.3015
+margin_top = 4.80045
+margin_right = 66.3015
+margin_bottom = 32.8004
+rect_scale = Vector2( 1.39971, 1.39971 )
+max_value = 99.0
+value = 99.0
+rounded = true
+texture_under = ExtResource( 2413 )
+texture_progress = ExtResource( 2411 )
+fill_mode = 3
+tint_progress = Color( 0.294118, 0.364706, 0.764706, 1 )
+nine_patch_stretch = true
+script = ExtResource( 2414 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PrayNode/OrbContainer"]
+anchor_left = 0.325998
+anchor_top = 0.469706
+anchor_right = 0.341623
+anchor_bottom = 0.469706
+margin_left = -26.589
+margin_top = -2.0
+margin_right = 5.41101
+margin_bottom = 24.0
+rect_scale = Vector2( 1.41128, 1.41128 )
+custom_fonts/normal_font = SubResource( 52 )
+bbcode_enabled = true
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="PrayNode/OrbContainer"]
+wait_time = 1.2
+
+[node name="ColorRect" type="ColorRect" parent="PrayNode"]
+margin_left = 730.32
+margin_top = 535.986
+margin_right = 770.32
+margin_bottom = 575.986
+color = Color( 0.917647, 0.882353, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealerBar" type="NinePatchRect" parent="."]
+margin_top = 2.0
+margin_right = 149.0
+margin_bottom = 44.0
+rect_scale = Vector2( 2.11354, 2.11354 )
+mouse_filter = 1
+texture = ExtResource( 5 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HealerBar"]
+margin_left = 9.0
+margin_top = 14.0
+margin_right = 108.0
+margin_bottom = 30.0
+rect_scale = Vector2( 1.11337, 1.11337 )
+custom_fonts/font = SubResource( 53 )
+custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Spawn Healers:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="TextureButton" parent="HealerBar"]
+margin_left = 123.0
+margin_top = 13.0
+margin_right = 140.0
+margin_bottom = 30.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="HealerBar"]
+process_mode = 0
+wait_time = 0.6
+
+[node name="Reset" type="NinePatchRect" parent="."]
+margin_top = 275.762
+margin_right = 85.0
+margin_bottom = 317.762
+rect_scale = Vector2( 2.23885, 2.23885 )
+mouse_filter = 1
+texture = ExtResource( 5 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Reset"]
+margin_left = 9.0
+margin_top = 14.0
+margin_right = 52.0
+margin_bottom = 30.0
+rect_scale = Vector2( 1.11337, 1.11337 )
+custom_fonts/font = SubResource( 53 )
+custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Reset:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="Reset"]
+margin_left = 54.8128
+margin_top = 10.7903
+margin_right = 79.8128
+margin_bottom = 35.7903
+focus_mode = 0
+custom_icons/checked = ExtResource( 3 )
+custom_icons/unchecked = ExtResource( 24 )
+toggle_mode = false
+enabled_focus_mode = 0
+script = ExtResource( 2416 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHit" type="NinePatchRect" parent="."]
+margin_left = 1.01176
+margin_top = 185.155
+margin_right = 125.012
+margin_bottom = 227.155
+rect_scale = Vector2( 2.14502, 2.14502 )
+mouse_filter = 1
+texture = ExtResource( 5 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MaxHit"]
+margin_left = 9.0
+margin_top = 14.0
+margin_right = 62.0
+margin_bottom = 30.0
+rect_scale = Vector2( 1.11337, 1.11337 )
+custom_fonts/font = SubResource( 53 )
+custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Max Hit:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="LineEdit" parent="MaxHit"]
+anchor_right = 0.024
+margin_left = 70.8099
+margin_top = 11.8994
+margin_right = 143.834
+margin_bottom = 49.8994
+grow_horizontal = 0
+rect_scale = Vector2( 0.575643, 0.496378 )
+focus_mode = 1
+size_flags_horizontal = 12
+size_flags_vertical = 12
+size_flags_stretch_ratio = 0.42
+custom_styles/normal = SubResource( 54 )
+custom_fonts/font = SubResource( 55 )
+text = "39"
+align = 1
+max_length = 3
+expand_to_text_length = true
+context_menu_enabled = false
+clear_button_enabled = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MaxHit"]
+visible = false
+margin_left = 642.316
+margin_top = 131.394
+margin_right = 700.316
+margin_bottom = 191.394
+rect_scale = Vector2( 0.818234, 0.818234 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MaxHit/Panel"]
+margin_left = -3.7041
+margin_top = 43.6303
+margin_right = 59.2959
+margin_bottom = 63.6303
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MaxHit/Panel"]
+margin_left = 14.5414
+margin_top = 1.80482
+margin_right = 43.5414
+margin_bottom = 42.8049
+texture = ExtResource( 50 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack Speed" type="NinePatchRect" parent="."]
+margin_top = 91.0
+margin_right = 143.0
+margin_bottom = 133.0
+rect_scale = Vector2( 2.21375, 2.21375 )
+mouse_filter = 1
+texture = ExtResource( 5 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Attack Speed"]
+margin_left = 9.36613
+margin_top = 13.8695
+margin_right = 86.3662
+margin_bottom = 29.8695
+rect_scale = Vector2( 1.11337, 1.11337 )
+custom_fonts/font = SubResource( 53 )
+custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Weapon:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton2" type="OptionButton" parent="Attack Speed"]
+anchor_left = -4.53447
+anchor_top = -2.60001
+anchor_right = -4.31768
+anchor_bottom = -2.5762
+margin_left = 721.429
+margin_top = 123.201
+margin_right = 767.429
+margin_bottom = 141.201
+rect_scale = Vector2( 0.783212, 0.920047 )
+theme = SubResource( 45 )
+custom_styles/hover = ExtResource( 2417 )
+custom_styles/pressed = SubResource( 46 )
+custom_styles/focus = SubResource( 47 )
+custom_styles/normal = ExtResource( 2417 )
+custom_fonts/font = SubResource( 48 )
+shortcut_in_tooltip = false
+text = "BoFa (4)"
+clip_text = true
+align = 1
+items = [ "BP (2)", null, false, 0, null, "BoFa (4)", null, false, 1, null, "RCB (5)", null, false, 2, null, "ACB (5)", null, false, 3, null, "TBow (5)", null, false, 4, null ]
+selected = 1
+script = ExtResource( 62 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CamButton" type="TextureButton" parent="."]
+margin_left = 3.08455
+margin_top = 373.294
+margin_right = 48.0846
+margin_bottom = 418.295
+rect_scale = Vector2( 2.15127, 2.15127 )
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 15 )
+expand = true
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CamControls" type="Label" parent="."]
+margin_left = 116.787
+margin_top = 389.897
+margin_right = 313.786
+margin_bottom = 570.897
+rect_scale = Vector2( 1.55786, 1.55786 )
+custom_fonts/font = SubResource( 56 )
+custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+script = ExtResource( 59 )
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="JadLTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 1.6
+one_shot = true
+
+[node name="JadRTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 1.6
+one_shot = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 57 )
+[connection signal="input_event" from="Floor/StaticBody" to="KinematicBody" method="_on_StaticBody_input_event"]
+[connection signal="toggled" from="PrayNode/MageButton" to="PrayNode/Prayers" method="_on_mage_toggled"]
+[connection signal="toggled" from="PrayNode/RangedButton" to="PrayNode/Prayers" method="_on_ranged_toggled"]
+[connection signal="toggled" from="PrayNode/MeleeButton" to="PrayNode/Prayers" method="_on_MeleeButton_toggled"]
+[connection signal="toggled" from="PrayNode/RedemButton" to="PrayNode/RedemButton" method="_on_RedemButton_toggled"]
+[connection signal="toggled" from="PrayNode/SharpEye" to="PrayNode/Prayers" method="_on_SharpEye_toggled"]
+[connection signal="toggled" from="PrayNode/HawkEye" to="PrayNode/Prayers" method="_on_HawkEye_toggled"]
+[connection signal="toggled" from="PrayNode/EagleEye" to="PrayNode/Prayers" method="_on_EagleEye_toggled"]
+[connection signal="toggled" from="PrayNode/Rigour" to="PrayNode/Prayers" method="_on_Rigour_pressed"]
+[connection signal="pressed" from="PrayNode/TopTab/InvButton" to="PrayNode/TopTab/InvButton" method="_on_InvButton_pressed"]
+[connection signal="pressed" from="PrayNode/TopTab/PrayerButton" to="PrayNode/TopTab/PrayerButton" method="_on_PrayerButton_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Brew1/Button" to="PrayNode/InvBG/Brew1/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Brew2/Button2" to="PrayNode/InvBG/Brew2/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Brew3/Button3" to="PrayNode/InvBG/Brew3/Button3" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Brew4/Button4" to="PrayNode/InvBG/Brew4/Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Rest1/Button5" to="PrayNode/InvBG/Rest1/Button5" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Rest2/Button6" to="PrayNode/InvBG/Rest2/Button6" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Rest3/Button7" to="PrayNode/InvBG/Rest3/Button7" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Rest4/Button8" to="PrayNode/InvBG/Rest4/Button8" method="_on_Button_pressed"]
+[connection signal="pressed" from="PrayNode/InvBG/Sweets/Button9" to="PrayNode/InvBG/Sweets/Button9" method="_on_Button_pressed"]
+[connection signal="timeout" from="PrayNode/InvBG/Sweets/Timer" to="PrayNode/InvBG/Sweets/Button9" method="_on_Timer_timeout"]
+[connection signal="item_selected" from="PrayNode/CanvasLayer2/Inv/OptionButton" to="PrayNode/CanvasLayer2/Inv/OptionButton" method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" to="PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" method="_on_OptionButton2_item_selected"]
+[connection signal="gui_input" from="PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_gui_input"]
+[connection signal="text_changed" from="PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_text_changed"]
+[connection signal="text_changed" from="PrayNode/CanvasLayer/LevelWindow/PrayerIcon/PrayerLvl" to="PrayNode/OrbContainer/PrayerBar" method="_on_PrayerLvl_text_changed"]
+[connection signal="timeout" from="PrayNode/OrbContainer/Timer" to="PrayNode/Prayers" method="_on_Timer_timeout"]
+[connection signal="button_down" from="HealerBar/CheckBox" to="Reset/CheckBox" method="_on_CheckBox_button_down"]
+[connection signal="timeout" from="HealerBar/Timer" to="Reset/CheckBox" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Reset/CheckBox" to="Reset/CheckBox" method="_on_CheckBox_pressed"]
+[connection signal="text_changed" from="MaxHit/Label2" to="MaxHit/Label2" method="_on_Label2_text_changed"]
+[connection signal="item_selected" from="Attack Speed/OptionButton2" to="Attack Speed/OptionButton2" method="_on_OptionButton2_item_selected"]
+[connection signal="pressed" from="CamButton" to="CamButton" method="_on_CamButton_pressed"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="Timer" method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="PrayNode/InvBG/Sweets/Button9" method="_on_Timer3_timeout"]
+[connection signal="timeout" from="JadLTimer" to="." method="_on_JadLTimer_timeout"]
+[connection signal="timeout" from="JadRTimer" to="." method="_on_JadRTimer_timeout"]

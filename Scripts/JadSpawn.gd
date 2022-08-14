@@ -22,6 +22,7 @@ func _ready():
 	jadInstance.transform.origin = Vector3(-67.445, -42.187, -96.662)
 	$"JadLTimer".start()
 	add_child(JadHealerColliderInstance)
+	JadHealerColliderInstance.translation = Vector3(-67.445, -42.187, -95.107)
 
 func _on_JadLTimer_timeout():
 	add_child(jadInstanceL)
@@ -30,6 +31,8 @@ func _on_JadLTimer_timeout():
 	jadInstanceL.rotation_degrees.y = 90
 	jadInstanceL.transform.origin = Vector3(-40.82, -42.187, -61.366)
 	add_child(JadHealerColliderInstanceL)
+	JadHealerColliderInstanceL.translation = Vector3(-40.82, -42.187, -61.366)
+	JadHealerColliderInstanceL.rotation_degrees.y = -90
 
 func _on_JadRTimer_timeout():
 	Globals.jadRSpawned = true
@@ -37,3 +40,5 @@ func _on_JadRTimer_timeout():
 	jadInstanceR.rotation_degrees.y = -90
 	jadInstanceR.transform.origin = Vector3(-94.95, -42.187, -61.366)
 	add_child(JadHealerColliderInstanceR)
+	JadHealerColliderInstanceR.translation = Vector3(-94.95, -42.187, -61.366)
+	JadHealerColliderInstanceR.rotation_degrees.y = -90

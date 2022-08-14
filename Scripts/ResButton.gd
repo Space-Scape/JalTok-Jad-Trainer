@@ -2,7 +2,7 @@ extends Button
 
 const Cooldown = preload('res://Scripts/Cooldown.gd')
 
-onready var cooldown = Cooldown.new(1.2)
+onready var cooldown = $"../../Brew1/Button".cooldown
 
 func _ready():
 	cooldown.time = 0
@@ -44,8 +44,9 @@ func _on_Button_pressed():
 			yield($"../../../../Timer","timeout")
 
 func _process(delta):
+	cooldown.tick(delta)
+	
 	if Globals.brewDose <= 0:
 		Globals.brewDose = 0
 		$"../../../../MaxHit/Panel".hide()
 	
-	cooldown.tick(delta)

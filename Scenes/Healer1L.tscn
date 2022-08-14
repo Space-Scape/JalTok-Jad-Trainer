@@ -16,12 +16,12 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.177349, 0.195897, 0.201811 )
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=2]
 script/source = "extends Node
 
-const Cooldown = preload('res://Scripts/Cooldown.gd')
+const Cooldown = preload('res://Scripts/HealerCooldown.gd')
 
-onready var cooldown = Cooldown.new(1.2)
+onready var cooldown = Cooldown.new(3)
 
 onready var blueTex = load(\"res://Sprites/hitsplatBlue.png\")
 onready var redTex = load(\"res://Sprites/hitsplatRed.png\")
@@ -36,6 +36,9 @@ onready var hpBar = $\"../ViewportContainer/Viewport/HpBar\"
 var hitNum
 var accuracyRange
 var accuracyNum = 3
+
+func _ready():
+	cooldown.time = 0
 
 func _process(delta):
 	cooldown.tick(delta)
@@ -53,57 +56,58 @@ func _process(delta):
 
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
-			Globals.clickGround = false
-			get_parent().canMoveToJad = false
-			get_parent().canMoveToPlayer = true
-			$\"../ViewportContainer/Viewport/HpBarSprite\".show()
-			$\"../ViewportContainer/Viewport/HealerHitSplat\".show()
-			Globals.attHealer1 = true
-			Globals.attHealer2 = false
-			Globals.attHealer3 = false
-			Globals.attHealer4 = false
-			Globals.attHealer5 = false
-			Globals.attHealer6 = false
-			Globals.attJad = false
-			if get_tree().get_root().get_child(2).has_node(\"JadL\"):
-				$\"/root/Spatial/JadL/ViewportContainer/Viewport/ProgressBarSprite2/Timer\".stop()
-			$\"../Timer\".start()
-			$\"../ViewportContainer/Viewport/HitTimer\".start()
-			$\"../JadHeal\".stop()
-			accuracyRange = rand_range(0,6)
-			
-			$\"../Healer\".play()
-			hitSplatNum.show()
-			hitSplat.show()
-			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
-				hitNum = rand_range(1, Globals.maxHit)
-				hitSplat.texture = redTex
-			else:
-				hitNum = 0
-				hitSplat.texture = blueTex
-			hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
-			hpBar.value -= hitNum
+		if event.button_index == BUTTON_LEFT and event.pressed == true:
+			if cooldown.is_ready():
+				Globals.clickGround = false
+				get_parent().canMoveToJad = false
+				get_parent().canMoveToPlayer = true
+				$\"../ViewportContainer/Viewport/HpBarSprite\".show()
+				$\"../ViewportContainer/Viewport/HealerHitSplat\".show()
+				Globals.attHealer1 = true
+				Globals.attHealer2 = false
+				Globals.attHealer3 = false
+				Globals.attHealer4 = false
+				Globals.attHealer5 = false
+				Globals.attHealer6 = false
+				Globals.attJad = false
+				if get_tree().get_root().get_child(2).has_node(\"JadL\"):
+					$\"/root/Spatial/JadL/ViewportContainer/Viewport/ProgressBarSprite2/Timer\".stop()
+				$\"../Timer\".start()
+				$\"../ViewportContainer/Viewport/HitTimer\".start()
+				$\"../JadHeal\".stop()
+				accuracyRange = rand_range(0,6)
+				
+				$\"../Healer\".play()
+				hitSplatNum.show()
+				hitSplat.show()
+				if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+					hitNum = rand_range(1, Globals.maxHit)
+					hitSplat.texture = redTex
+				else:
+					hitNum = 0
+					hitSplat.texture = blueTex
+				hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+				hpBar.value -= hitNum
 "
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=3]
 content_margin_left = 2.0
 content_margin_right = 2.0
 content_margin_top = 2.0
 content_margin_bottom = 2.0
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 outline_size = 1
 outline_color = Color( 0.0352941, 0.00392157, 0.00392157, 1 )
 extra_spacing_char = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 554, 55 )
 margin_left = 5.0
 
-[sub_resource type="ViewportTexture" id=5]
+[sub_resource type="ViewportTexture" id=6]
 viewport_path = NodePath("ViewportContainer/Viewport")
 
 [node name="HealerL" type="KinematicBody"]
@@ -157,7 +161,7 @@ stream = ExtResource( 4 )
 volume_db = 13.183
 
 [node name="HealerAggro" type="Node" parent="."]
-script = SubResource( 6 )
+script = SubResource( 2 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_left = 21.8633
@@ -191,8 +195,8 @@ margin_top = -15.324
 margin_right = 36.091
 margin_bottom = 6.676
 rect_scale = Vector2( 2, 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 text = "22"
 scroll_active = false
@@ -201,7 +205,7 @@ scroll_active = false
 margin_right = 299.0
 margin_bottom = 40.0
 custom_styles/fg = ExtResource( 10 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 max_value = 60.0
 step = 1.0
 value = 60.0
@@ -213,7 +217,7 @@ transform = Transform( 1.6, 0, 0, 0, 1.0975, 0, 0, 0, 1.6, 0, 4.06846, 0 )
 visible = false
 flip_v = true
 billboard = 1
-texture = SubResource( 5 )
+texture = SubResource( 6 )
 script = ExtResource( 12 )
 
 [node name="HitTimer" type="Timer" parent="ViewportContainer/Viewport"]

@@ -78,7 +78,7 @@ func _on_Timer_timeout():
 				if accuracyRange >= accuracyNum:
 					hitNum = rand_range(1, 14)
 					hpBar.value -= hitNum
-					$"/root/Spatial/PrayNode/OrbContainer2/HpBar".value -= hitNum
+					$"/root/Spatial/CanvasLayer/PrayNode/OrbContainer2/HpBar".value -= hitNum
 					numContainer.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
 					$"/root/Spatial/ViewportContainer2/Viewport2/HealerHitSplat".texture = redTex
 					yield($"/root/Spatial/Timer2", "timeout")
@@ -95,7 +95,7 @@ func _on_Timer_timeout():
 				if accuracyRange >= accuracyNum:
 					hitNum = rand_range(1, 14)
 					hpBar.value -= hitNum
-					$"/root/Spatial/PrayNode/OrbContainer2/HpBar".value -= hitNum
+					$"/root/Spatial/CanvasLayer/PrayNode/OrbContainer2/HpBar".value -= hitNum
 					numContainer.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
 					$"/root/Spatial/ViewportContainer2/Viewport2/HealerHitSplat".texture = redTex
 					yield($"/root/Spatial/Timer2", "timeout")

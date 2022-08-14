@@ -5,7 +5,7 @@ var max_time = 0
 var stop
 
 func _init(max_time):
-	self.max_time = 0.6
+	self.max_time = 3
 	self.time = 0
 
 func tick(delta):

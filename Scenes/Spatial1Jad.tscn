@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
@@ -46,8 +46,6 @@
 [ext_resource path="res://SFX/SharpEye.wav" type="AudioStream" id=54]
 [ext_resource path="res://SFX/Rigour.wav" type="AudioStream" id=55]
 [ext_resource path="res://SFX/HawkEye.wav" type="AudioStream" id=56]
-[ext_resource path="res://Sprites/PurpleSweet.png" type="Texture" id=57]
-[ext_resource path="res://Scripts/Sweets.gd" type="Script" id=58]
 [ext_resource path="res://Scripts/TickSystem.gd" type="Script" id=59]
 [ext_resource path="res://Scripts/AttackSpeed.gd" type="Script" id=62]
 [ext_resource path="res://SFX/Potion.wav" type="AudioStream" id=63]
@@ -83,33 +81,33 @@ viewport_path = NodePath("ViewportContainer2/Viewport2")
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 3
-atlas = ExtResource( 84 )
-region = Rect2( 0, 0, 325, 677 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 3
-atlas = ExtResource( 84 )
-region = Rect2( 325, 0, 325, 677 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 3
-atlas = ExtResource( 85 )
-region = Rect2( 0, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 3
-atlas = ExtResource( 85 )
-region = Rect2( 443, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 3
 atlas = ExtResource( 49 )
 region = Rect2( 0, 0, 305, 677 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 flags = 3
 atlas = ExtResource( 49 )
 region = Rect2( 305, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 3
+atlas = ExtResource( 86 )
+region = Rect2( 0, 0, 518, 814 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 3
+atlas = ExtResource( 86 )
+region = Rect2( 518, 0, 518, 814 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 3
+atlas = ExtResource( 84 )
+region = Rect2( 0, 0, 325, 677 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 3
+atlas = ExtResource( 84 )
+region = Rect2( 325, 0, 325, 677 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 3
@@ -128,29 +126,29 @@ region = Rect2( 0, 0, 353, 628 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 3
-atlas = ExtResource( 86 )
-region = Rect2( 0, 0, 518, 814 )
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 443, 815 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 3
-atlas = ExtResource( 86 )
-region = Rect2( 518, 0, 518, 814 )
+atlas = ExtResource( 85 )
+region = Rect2( 443, 0, 443, 815 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
-"name": "ACB",
+"name": "BP",
 "speed": 1.0
 }, {
 "frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "BoFa",
+"name": "RCB",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "BP",
+"name": "ACB",
 "speed": 1.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 10 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ) ],
@@ -160,7 +158,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
-"name": "RCB",
+"name": "BoFa",
 "speed": 1.0
 } ]
 
@@ -247,22 +245,6 @@ animations = [ {
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=37]
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 57 )
-region = Rect2( 0, 0, 28, 24 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 57 )
-region = Rect2( 28, 0, 28, 24 )
-
-[sub_resource type="SpriteFrames" id=40]
-animations = [ {
-"frames": [ SubResource( 38 ), SubResource( 39 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="DynamicFont" id=41]
 size = 32
@@ -645,12 +627,14 @@ light_energy = 0.92
 transform = Transform( 1, 0, 0, 0, -0.861009, 0.50859, 0, -0.50859, -0.861009, -20.7085, 5.62858, -111.273 )
 light_energy = 0.65
 
-[node name="PrayNode" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PrayNode" type="Node2D" parent="CanvasLayer"]
 position = Vector2( 188.344, 100.071 )
 scale = Vector2( 1.67228, 1.67228 )
 z_index = 3
 
-[node name="Column2" type="TextureRect" parent="PrayNode"]
+[node name="Column2" type="TextureRect" parent="CanvasLayer/PrayNode"]
 pause_mode = 2
 margin_left = 1005.97
 margin_top = 294.0
@@ -663,7 +647,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Column3" type="TextureRect" parent="PrayNode"]
+[node name="Column3" type="TextureRect" parent="CanvasLayer/PrayNode"]
 pause_mode = 2
 margin_left = 772.489
 margin_top = 294.0
@@ -675,7 +659,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrayPanel" type="TextureRect" parent="PrayNode"]
+[node name="PrayPanel" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 799.241
 margin_top = 292.044
 margin_right = 1010.24
@@ -685,12 +669,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrayerIcon" type="Sprite3D" parent="PrayNode"]
+[node name="PrayerIcon" type="Sprite3D" parent="CanvasLayer/PrayNode"]
 transform = Transform( 6.18165, 0, 0, 0, 6.18165, 0, 0, 0, 6.18165, -67.3127, 10.0504, -61.746 )
 billboard = 1
 texture = ExtResource( 8 )
 
-[node name="MageButton" type="Button" parent="PrayNode"]
+[node name="MageButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 847.0
 margin_top = 426.464
 margin_right = 887.0
@@ -705,7 +689,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RangedButton" type="Button" parent="PrayNode"]
+[node name="RangedButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 889.0
 margin_top = 425.568
 margin_right = 925.0
@@ -720,7 +704,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MeleeButton" type="Button" parent="PrayNode"]
+[node name="MeleeButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 927.251
 margin_top = 426.912
 margin_right = 963.251
@@ -735,7 +719,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RedemButton" type="Button" parent="PrayNode"]
+[node name="RedemButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 886.034
 margin_top = 461.671
 margin_right = 1032.03
@@ -753,7 +737,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SharpEye" type="Button" parent="PrayNode"]
+[node name="SharpEye" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 925.84
 margin_top = 308.149
 margin_right = 963.84
@@ -771,7 +755,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HawkEye" type="Button" parent="PrayNode"]
+[node name="HawkEye" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 842.0
 margin_top = 382.0
 margin_right = 892.0
@@ -787,7 +771,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EagleEye" type="Button" parent="PrayNode"]
+[node name="EagleEye" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 958.476
 margin_top = 420.467
 margin_right = 1001.48
@@ -804,7 +788,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rigour" type="Button" parent="PrayNode"]
+[node name="Rigour" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 881.799
 margin_top = 496.869
 margin_right = 930.799
@@ -820,10 +804,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Prayers" type="Node" parent="PrayNode"]
+[node name="Prayers" type="Node" parent="CanvasLayer/PrayNode"]
 script = ExtResource( 2 )
 
-[node name="TopTab" type="TextureRect" parent="PrayNode"]
+[node name="TopTab" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 776.0
 margin_top = 254.0
 margin_right = 1034.0
@@ -834,7 +818,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InvButton" type="Button" parent="PrayNode/TopTab"]
+[node name="InvButton" type="Button" parent="CanvasLayer/PrayNode/TopTab"]
 margin_left = 113.0
 margin_top = 1.0
 margin_right = 146.0
@@ -848,7 +832,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrayerButton" type="Button" parent="PrayNode/TopTab"]
+[node name="PrayerButton" type="Button" parent="CanvasLayer/PrayNode/TopTab"]
 margin_left = 183.0
 margin_top = 1.0
 margin_right = 217.0
@@ -863,7 +847,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InvBG" type="TextureRect" parent="PrayNode"]
+[node name="InvBG" type="TextureRect" parent="CanvasLayer/PrayNode"]
 visible = false
 margin_left = 810.075
 margin_top = 305.356
@@ -874,13 +858,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Brew1" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew1" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 36.3613, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Brew"
 
-[node name="Button" type="Button" parent="PrayNode/InvBG/Brew1"]
+[node name="Button" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew1"]
 margin_left = -40.0
 margin_top = -34.0
 margin_right = 32.0
@@ -894,13 +878,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Brew2" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew2" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 78.8093, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Brew"
 
-[node name="Button2" type="Button" parent="PrayNode/InvBG/Brew2"]
+[node name="Button2" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew2"]
 margin_left = -37.0
 margin_top = -34.0
 margin_right = 30.0
@@ -915,13 +899,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Brew3" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew3" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 118.242, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Brew"
 
-[node name="Button3" type="Button" parent="PrayNode/InvBG/Brew3"]
+[node name="Button3" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew3"]
 margin_left = -37.0
 margin_top = -34.0
 margin_right = 30.0
@@ -936,13 +920,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Brew4" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew4" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 156.421, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Brew"
 
-[node name="Button4" type="Button" parent="PrayNode/InvBG/Brew4"]
+[node name="Button4" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew4"]
 margin_left = -36.0
 margin_top = -34.0
 margin_right = 29.0
@@ -957,13 +941,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest1" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest1" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 36.3613, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Rest"
 
-[node name="Button5" type="Button" parent="PrayNode/InvBG/Rest1"]
+[node name="Button5" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest1"]
 margin_left = -36.0
 margin_top = -41.0
 margin_right = 29.0
@@ -978,13 +962,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest2" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest2" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 78.8093, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Rest"
 
-[node name="Button6" type="Button" parent="PrayNode/InvBG/Rest2"]
+[node name="Button6" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest2"]
 margin_left = -38.0
 margin_top = -41.0
 margin_right = 31.0
@@ -999,13 +983,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest3" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest3" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 118.242, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Rest"
 
-[node name="Button7" type="Button" parent="PrayNode/InvBG/Rest3"]
+[node name="Button7" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest3"]
 margin_left = -39.0
 margin_top = -41.0
 margin_right = 31.0
@@ -1020,13 +1004,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest4" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest4" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 156.421, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
 frames = SubResource( 36 )
 animation = "Rest"
 
-[node name="Button8" type="Button" parent="PrayNode/InvBG/Rest4"]
+[node name="Button8" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest4"]
 margin_left = -35.0
 margin_top = -41.0
 margin_right = 27.0
@@ -1041,36 +1025,11 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Sweets" type="AnimatedSprite" parent="PrayNode/InvBG"]
-position = Vector2( 34.1071, 110.178 )
-scale = Vector2( 1.16059, 1.16059 )
-frames = SubResource( 40 )
-speed_scale = 2.0
-
-[node name="Button9" type="Button" parent="PrayNode/InvBG/Sweets"]
-margin_left = -15.0
-margin_top = -14.0
-margin_right = 14.0
-margin_bottom = 13.0
-focus_mode = 1
-custom_styles/focus = SubResource( 37 )
-enabled_focus_mode = 1
-flat = true
-script = ExtResource( 58 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="Timer" type="Timer" parent="PrayNode/InvBG/Sweets"]
-wait_time = 0.2
-one_shot = true
-
-[node name="Potion" type="AudioStreamPlayer" parent="PrayNode/InvBG"]
+[node name="Potion" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode/InvBG"]
 stream = ExtResource( 63 )
 volume_db = 19.945
 
-[node name="Label" type="Label" parent="PrayNode"]
+[node name="Label" type="Label" parent="CanvasLayer/PrayNode"]
 margin_left = 785.0
 margin_top = -77.0956
 margin_right = 1085.0
@@ -1092,45 +1051,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PrayNode/Label"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PrayNode/Label"]
 anims/TextAnim = SubResource( 42 )
 
-[node name="MagePray" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="MagePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 21 )
 volume_db = 16.932
 
-[node name="RangePray" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="RangePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 17 )
 volume_db = 19.185
 
-[node name="PrayOff" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="PrayOff" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 20 )
 volume_db = 17.165
 
-[node name="EagleEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="EagleEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 52 )
 volume_db = 10.097
 
-[node name="SharpEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="SharpEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 54 )
 volume_db = 10.097
 
-[node name="HawkEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="HawkEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 56 )
 volume_db = 10.097
 
-[node name="RigourSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="RigourSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 55 )
 volume_db = 10.097
 
-[node name="PrayDrain" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="PrayDrain" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 53 )
 volume_db = 8.077
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="PrayNode"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = 2
 
-[node name="Inv" type="TextureRect" parent="PrayNode/CanvasLayer2"]
+[node name="Inv" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer2"]
 anchor_left = -0.0553265
 anchor_top = -0.0281445
 anchor_right = -0.0553265
@@ -1146,7 +1105,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="OptionButton" type="OptionButton" parent="PrayNode/CanvasLayer2/Inv"]
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/PrayNode/CanvasLayer2/Inv"]
 anchor_left = -7.62939e-08
 anchor_top = 0.0135798
 anchor_bottom = 0.0506165
@@ -1171,7 +1130,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PrayerIcon2" type="TextureRect" parent="PrayNode/CanvasLayer2"]
+[node name="PrayerIcon2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer2"]
 anchor_left = -0.0263893
 anchor_top = -0.0324354
 anchor_right = -0.0263893
@@ -1187,7 +1146,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="OptionButton2" type="OptionButton" parent="PrayNode/CanvasLayer2/PrayerIcon2"]
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2"]
 anchor_left = -0.104604
 anchor_top = 0.051628
 anchor_right = -0.104604
@@ -1214,10 +1173,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PrayNode"]
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = -2
 
-[node name="LevelWindow" type="NinePatchRect" parent="PrayNode/CanvasLayer"]
+[node name="LevelWindow" type="NinePatchRect" parent="CanvasLayer/PrayNode/CanvasLayer"]
 show_behind_parent = true
 anchor_left = -0.058208
 anchor_top = -0.032685
@@ -1236,11 +1195,10 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 6
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": true
 }
 
-[node name="HpIcon" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow"]
+[node name="HpIcon" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow"]
 margin_left = 4.86316
 margin_top = 41.6955
 margin_right = 32.8632
@@ -1251,7 +1209,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="HpLvl" type="LineEdit" parent="PrayNode/CanvasLayer/LevelWindow/HpIcon"]
+[node name="HpLvl" type="LineEdit" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon"]
 anchor_left = 1.17895
 anchor_top = 0.594216
 anchor_right = 2.53395
@@ -1271,7 +1229,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="HpLvl2" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow/HpIcon"]
+[node name="HpLvl2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon"]
 margin_left = -0.266357
 margin_top = 11.2868
 margin_right = 14.7336
@@ -1282,7 +1240,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PrayerIcon" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow"]
+[node name="PrayerIcon" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow"]
 margin_left = 83.7797
 margin_top = 40.596
 margin_right = 110.78
@@ -1293,7 +1251,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PrayerLvl" type="LineEdit" parent="PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
+[node name="PrayerLvl" type="LineEdit" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
 anchor_left = 1.033
 anchor_top = 0.634016
 anchor_right = 2.26
@@ -1315,7 +1273,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="PrayerLvl2" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
+[node name="PrayerLvl2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
 margin_left = -0.399414
 margin_top = 11.9868
 margin_right = 14.6006
@@ -1326,7 +1284,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="OrbContainer2" type="TextureRect" parent="PrayNode"]
+[node name="OrbContainer2" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 724.0
 margin_top = 110.0
 margin_right = 806.0
@@ -1337,7 +1295,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HpBar" type="TextureProgress" parent="PrayNode/OrbContainer2"]
+[node name="HpBar" type="TextureProgress" parent="CanvasLayer/PrayNode/OrbContainer2"]
 modulate = Color( 0.85098, 0.129412, 0.129412, 1 )
 anchor_left = 0.489475
 anchor_top = 0.390669
@@ -1360,7 +1318,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PrayNode/OrbContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PrayNode/OrbContainer2"]
 anchor_left = 0.325998
 anchor_top = 0.469706
 anchor_right = 0.341623
@@ -1379,7 +1337,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="OrbContainer" type="TextureRect" parent="PrayNode"]
+[node name="OrbContainer" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 701.582
 margin_top = 156.151
 margin_right = 783.582
@@ -1391,7 +1349,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="PrayerBar" type="TextureProgress" parent="PrayNode/OrbContainer"]
+[node name="PrayerBar" type="TextureProgress" parent="CanvasLayer/PrayNode/OrbContainer"]
 margin_left = 38.3015
 margin_top = 4.80045
 margin_right = 66.3015
@@ -1410,7 +1368,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PrayNode/OrbContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PrayNode/OrbContainer"]
 anchor_left = 0.325998
 anchor_top = 0.469706
 anchor_right = 0.341623
@@ -1429,10 +1387,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Timer" type="Timer" parent="PrayNode/OrbContainer"]
+[node name="Timer" type="Timer" parent="CanvasLayer/PrayNode/OrbContainer"]
 wait_time = 1.2
 
-[node name="ColorRect" type="ColorRect" parent="PrayNode"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PrayNode"]
 margin_left = 730.32
 margin_top = 535.986
 margin_right = 770.32
@@ -1442,59 +1400,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HealerBar" type="NinePatchRect" parent="."]
-margin_top = 2.0
-margin_right = 149.0
-margin_bottom = 44.0
-rect_scale = Vector2( 2.11354, 2.11354 )
-mouse_filter = 1
-texture = ExtResource( 5 )
-patch_margin_left = 21
-patch_margin_top = 21
-patch_margin_right = 21
-patch_margin_bottom = 21
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HealerBar"]
-margin_left = 9.0
-margin_top = 14.0
-margin_right = 108.0
-margin_bottom = 30.0
-rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 53 )
-custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Spawn Healers:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBox" type="TextureButton" parent="HealerBar"]
-margin_left = 123.0
-margin_top = 13.0
-margin_right = 140.0
-margin_bottom = 30.0
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 24 )
-texture_pressed = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="HealerBar"]
-process_mode = 0
-wait_time = 0.6
-
-[node name="Reset" type="NinePatchRect" parent="."]
-margin_top = 275.762
+[node name="Reset" type="NinePatchRect" parent="CanvasLayer"]
+margin_top = 184.486
 margin_right = 85.0
-margin_bottom = 317.762
+margin_bottom = 226.486
 rect_scale = Vector2( 2.23885, 2.23885 )
 mouse_filter = 1
 texture = ExtResource( 5 )
@@ -1508,7 +1417,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Reset"]
+[node name="Label" type="Label" parent="CanvasLayer/Reset"]
 margin_left = 9.0
 margin_top = 14.0
 margin_right = 52.0
@@ -1522,7 +1431,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="CheckBox" parent="Reset"]
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/Reset"]
 margin_left = 54.8128
 margin_top = 10.7903
 margin_right = 79.8128
@@ -1537,11 +1446,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MaxHit" type="NinePatchRect" parent="."]
+[node name="MaxHit" type="NinePatchRect" parent="CanvasLayer"]
 margin_left = 1.01176
-margin_top = 185.155
+margin_top = 93.8794
 margin_right = 125.012
-margin_bottom = 227.155
+margin_bottom = 135.879
 rect_scale = Vector2( 2.14502, 2.14502 )
 mouse_filter = 1
 texture = ExtResource( 5 )
@@ -1555,7 +1464,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MaxHit"]
+[node name="Label" type="Label" parent="CanvasLayer/MaxHit"]
 margin_left = 9.0
 margin_top = 14.0
 margin_right = 62.0
@@ -1569,7 +1478,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="LineEdit" parent="MaxHit"]
+[node name="Label2" type="LineEdit" parent="CanvasLayer/MaxHit"]
 anchor_right = 0.024
 margin_left = 70.8099
 margin_top = 11.8994
@@ -1594,7 +1503,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="MaxHit"]
+[node name="Panel" type="Panel" parent="CanvasLayer/MaxHit"]
 visible = false
 margin_left = 642.316
 margin_top = 131.394
@@ -1605,7 +1514,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MaxHit/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MaxHit/Panel"]
 margin_left = -3.7041
 margin_top = 43.6303
 margin_right = 59.2959
@@ -1616,7 +1525,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="MaxHit/Panel"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MaxHit/Panel"]
 margin_left = 14.5414
 margin_top = 1.80482
 margin_right = 43.5414
@@ -1627,10 +1536,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Attack Speed" type="NinePatchRect" parent="."]
-margin_top = 91.0
+[node name="Attack Speed" type="NinePatchRect" parent="CanvasLayer"]
+margin_top = -0.275558
 margin_right = 143.0
-margin_bottom = 133.0
+margin_bottom = 41.7244
 rect_scale = Vector2( 2.21375, 2.21375 )
 mouse_filter = 1
 texture = ExtResource( 5 )
@@ -1644,7 +1553,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Attack Speed"]
+[node name="Label" type="Label" parent="CanvasLayer/Attack Speed"]
 margin_left = 9.36613
 margin_top = 13.8695
 margin_right = 86.3662
@@ -1658,7 +1567,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionButton2" type="OptionButton" parent="Attack Speed"]
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Attack Speed"]
 anchor_left = -4.53447
 anchor_top = -2.60001
 anchor_right = -4.31768
@@ -1685,11 +1594,11 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="CamButton" type="TextureButton" parent="."]
+[node name="CamButton" type="TextureButton" parent="CanvasLayer"]
 margin_left = 3.08455
-margin_top = 373.294
+margin_top = 282.018
 margin_right = 48.0846
-margin_bottom = 418.295
+margin_bottom = 327.019
 rect_scale = Vector2( 2.15127, 2.15127 )
 focus_mode = 0
 toggle_mode = true
@@ -1703,11 +1612,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CamControls" type="Label" parent="."]
+[node name="CamControls" type="Label" parent="CanvasLayer"]
 margin_left = 116.787
-margin_top = 389.897
+margin_top = 298.621
 margin_right = 313.786
-margin_bottom = 570.897
+margin_bottom = 479.621
 rect_scale = Vector2( 1.55786, 1.55786 )
 custom_fonts/font = SubResource( 56 )
 custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
@@ -1740,40 +1649,35 @@ one_shot = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 57 )
 [connection signal="input_event" from="Floor/StaticBody" to="KinematicBody" method="_on_StaticBody_input_event"]
-[connection signal="toggled" from="PrayNode/MageButton" to="PrayNode/Prayers" method="_on_mage_toggled"]
-[connection signal="toggled" from="PrayNode/RangedButton" to="PrayNode/Prayers" method="_on_ranged_toggled"]
-[connection signal="toggled" from="PrayNode/MeleeButton" to="PrayNode/Prayers" method="_on_MeleeButton_toggled"]
-[connection signal="toggled" from="PrayNode/RedemButton" to="PrayNode/RedemButton" method="_on_RedemButton_toggled"]
-[connection signal="toggled" from="PrayNode/SharpEye" to="PrayNode/Prayers" method="_on_SharpEye_toggled"]
-[connection signal="toggled" from="PrayNode/HawkEye" to="PrayNode/Prayers" method="_on_HawkEye_toggled"]
-[connection signal="toggled" from="PrayNode/EagleEye" to="PrayNode/Prayers" method="_on_EagleEye_toggled"]
-[connection signal="toggled" from="PrayNode/Rigour" to="PrayNode/Prayers" method="_on_Rigour_pressed"]
-[connection signal="pressed" from="PrayNode/TopTab/InvButton" to="PrayNode/TopTab/InvButton" method="_on_InvButton_pressed"]
-[connection signal="pressed" from="PrayNode/TopTab/PrayerButton" to="PrayNode/TopTab/PrayerButton" method="_on_PrayerButton_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew1/Button" to="PrayNode/InvBG/Brew1/Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew2/Button2" to="PrayNode/InvBG/Brew2/Button2" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew3/Button3" to="PrayNode/InvBG/Brew3/Button3" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew4/Button4" to="PrayNode/InvBG/Brew4/Button4" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest1/Button5" to="PrayNode/InvBG/Rest1/Button5" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest2/Button6" to="PrayNode/InvBG/Rest2/Button6" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest3/Button7" to="PrayNode/InvBG/Rest3/Button7" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest4/Button8" to="PrayNode/InvBG/Rest4/Button8" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Sweets/Button9" to="PrayNode/InvBG/Sweets/Button9" method="_on_Button_pressed"]
-[connection signal="timeout" from="PrayNode/InvBG/Sweets/Timer" to="PrayNode/InvBG/Sweets/Button9" method="_on_Timer_timeout"]
-[connection signal="item_selected" from="PrayNode/CanvasLayer2/Inv/OptionButton" to="PrayNode/CanvasLayer2/Inv/OptionButton" method="_on_OptionButton_item_selected"]
-[connection signal="item_selected" from="PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" to="PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" method="_on_OptionButton2_item_selected"]
-[connection signal="gui_input" from="PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_gui_input"]
-[connection signal="text_changed" from="PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_text_changed"]
-[connection signal="text_changed" from="PrayNode/CanvasLayer/LevelWindow/PrayerIcon/PrayerLvl" to="PrayNode/OrbContainer/PrayerBar" method="_on_PrayerLvl_text_changed"]
-[connection signal="timeout" from="PrayNode/OrbContainer/Timer" to="PrayNode/Prayers" method="_on_Timer_timeout"]
-[connection signal="button_down" from="HealerBar/CheckBox" to="Reset/CheckBox" method="_on_CheckBox_button_down"]
-[connection signal="timeout" from="HealerBar/Timer" to="Reset/CheckBox" method="_on_Timer_timeout"]
-[connection signal="pressed" from="Reset/CheckBox" to="Reset/CheckBox" method="_on_CheckBox_pressed"]
-[connection signal="text_changed" from="MaxHit/Label2" to="MaxHit/Label2" method="_on_Label2_text_changed"]
-[connection signal="item_selected" from="Attack Speed/OptionButton2" to="Attack Speed/OptionButton2" method="_on_OptionButton2_item_selected"]
-[connection signal="pressed" from="CamButton" to="CamButton" method="_on_CamButton_pressed"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/MageButton" to="CanvasLayer/PrayNode/Prayers" method="_on_mage_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/RangedButton" to="CanvasLayer/PrayNode/Prayers" method="_on_ranged_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/MeleeButton" to="CanvasLayer/PrayNode/Prayers" method="_on_MeleeButton_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/RedemButton" to="CanvasLayer/PrayNode/RedemButton" method="_on_RedemButton_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/SharpEye" to="CanvasLayer/PrayNode/Prayers" method="_on_SharpEye_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/HawkEye" to="CanvasLayer/PrayNode/Prayers" method="_on_HawkEye_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/EagleEye" to="CanvasLayer/PrayNode/Prayers" method="_on_EagleEye_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/Rigour" to="CanvasLayer/PrayNode/Prayers" method="_on_Rigour_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/TopTab/InvButton" to="CanvasLayer/PrayNode/TopTab/InvButton" method="_on_InvButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/TopTab/PrayerButton" to="CanvasLayer/PrayNode/TopTab/PrayerButton" method="_on_PrayerButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew1/Button" to="CanvasLayer/PrayNode/InvBG/Brew1/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew2/Button2" to="CanvasLayer/PrayNode/InvBG/Brew2/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew3/Button3" to="CanvasLayer/PrayNode/InvBG/Brew3/Button3" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew4/Button4" to="CanvasLayer/PrayNode/InvBG/Brew4/Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest1/Button5" to="CanvasLayer/PrayNode/InvBG/Rest1/Button5" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest2/Button6" to="CanvasLayer/PrayNode/InvBG/Rest2/Button6" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest3/Button7" to="CanvasLayer/PrayNode/InvBG/Rest3/Button7" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest4/Button8" to="CanvasLayer/PrayNode/InvBG/Rest4/Button8" method="_on_Button_pressed"]
+[connection signal="item_selected" from="CanvasLayer/PrayNode/CanvasLayer2/Inv/OptionButton" to="CanvasLayer/PrayNode/CanvasLayer2/Inv/OptionButton" method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" to="CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" method="_on_OptionButton2_item_selected"]
+[connection signal="text_changed" from="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="CanvasLayer/PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/PrayerIcon/PrayerLvl" to="CanvasLayer/PrayNode/OrbContainer/PrayerBar" method="_on_PrayerLvl_text_changed"]
+[connection signal="gui_input" from="CanvasLayer/PrayNode/OrbContainer2/HpBar" to="CanvasLayer/PrayNode/OrbContainer2/HpBar" method="_on_HpBar_gui_input"]
+[connection signal="timeout" from="CanvasLayer/PrayNode/OrbContainer/Timer" to="CanvasLayer/PrayNode/Prayers" method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Reset/CheckBox" to="CanvasLayer/Reset/CheckBox" method="_on_CheckBox_pressed"]
+[connection signal="text_changed" from="CanvasLayer/MaxHit/Label2" to="CanvasLayer/MaxHit/Label2" method="_on_Label2_text_changed"]
+[connection signal="item_selected" from="CanvasLayer/Attack Speed/OptionButton2" to="CanvasLayer/Attack Speed/OptionButton2" method="_on_OptionButton2_item_selected"]
+[connection signal="pressed" from="CanvasLayer/CamButton" to="CanvasLayer/CamButton" method="_on_CamButton_pressed"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="Timer" method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Timer3" to="PrayNode/InvBG/Sweets/Button9" method="_on_Timer3_timeout"]
 [connection signal="timeout" from="JadLTimer" to="." method="_on_JadLTimer_timeout"]
 [connection signal="timeout" from="JadRTimer" to="." method="_on_JadRTimer_timeout"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.200826, 0.159073, 0.194753 )
+extents = Vector3( 0.219081, 0.218867, 0.218803 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.607843, 0.913725, 0, 1 )
 
 [node name="JadHealerCollider" type="StaticBody"]
-transform = Transform( 2.5, 0, 0, 0, 17.118, 0, 0, 0, 2.5, -67.46, -42.176, -96.53 )
+transform = Transform( 2.5, 0, 0, 0, 17.118, 0, 0, 0, 2.5, 0, 0, 0 )
 input_ray_pickable = false
 collision_layer = 8
 collision_mask = 8
@@ -15,3 +18,11 @@ shape = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="CSGBox" type="CSGBox" parent="CollisionShape2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
+width = 0.436192
+height = 0.437183
+depth = 0.436377
+material = SubResource( 2 )

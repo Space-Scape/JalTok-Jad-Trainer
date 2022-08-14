@@ -17,19 +17,18 @@ var accuracyNum = 4.5
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
 	
-	if Globals.selectBP:
-		$"../ViewportContainer/Viewport/ProgressBarSprite2/Timer".wait_time = 1.2
 	if Globals.selectBF:
-		$"../ViewportContainer/Viewport/ProgressBarSprite2/Timer".wait_time = 2.4
-	if Globals.selectRCB:
-		$"../ViewportContainer/Viewport/ProgressBarSprite2/Timer".wait_time = 3
-	if Globals.selectACB:
-		$"../ViewportContainer/Viewport/ProgressBarSprite2/Timer".wait_time = 3
+		accuracyNum = 3.5
 	if Globals.selectTB:
-		$"../ViewportContainer/Viewport/ProgressBarSprite2/Timer".wait_time = 3
+		accuracyNum = 2.5
 	
 	if Globals.attJadL == true:
 		backSprite.play()
+		Globals.attJad = false
+		Globals.attJadR = false
+	else:
+		hitSplatNum.hide()
+		hitSplat.hide()
 	
 	if hpBar.value <= 0:
 		attTimer.stop()
@@ -52,7 +51,6 @@ func _on_Timer_timeout():
 	if get_tree().get_root().get_child(2).has_node("JadL"):
 		if Globals.tick == 1:
 			if Globals.attJadL == true:
-				
 				yield($"/root/Spatial/Timer", "timeout")
 				$"../JadHit".play()
 				hitSplatNum.show()
@@ -63,13 +61,9 @@ func _on_Timer_timeout():
 				else:
 					hitNum = 0
 					hitSplat.texture = blueTex
-				
 				hitSplatNum.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
 				hpBar.value -= hitNum
 				yield($"/root/Spatial/Timer2", "timeout")
-			else:
-				hitSplatNum.hide()
-				hitSplat.hide()
 		if Globals.tick == 2:
 			if Globals.attJadL == true:
 				yield($"/root/Spatial/Timer2", "timeout")
@@ -86,6 +80,3 @@ func _on_Timer_timeout():
 				hitSplatNum.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
 				hpBar.value -= hitNum
 				yield($"/root/Spatial/Timer", "timeout")
-			else:
-				hitSplatNum.hide()
-				hitSplat.hide()

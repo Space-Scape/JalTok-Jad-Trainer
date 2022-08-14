@@ -26,9 +26,9 @@ var hitDmg
 var ate
 var healerhitDmg
 
-var attJad
-var attJadL
-var attJadR
+var attJad = false
+var attJadL = false
+var attJadR = false
 
 var jadMSpawned
 var jadLSpawned

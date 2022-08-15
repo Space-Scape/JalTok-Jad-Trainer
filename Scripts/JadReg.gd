@@ -5,4 +5,3 @@ func _process(_delta):
 	rotation_degrees.y -= 180
 	rotation_degrees.x = 0
 	rotation_degrees.z = 0
-

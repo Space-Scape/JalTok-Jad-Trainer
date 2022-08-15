@@ -52,6 +52,13 @@ func _process(delta):
 		cooldown.max_time = 3
 	if Globals.selectTB:
 		cooldown.max_time = 3
+	
+	if hpBar.value <= 0:
+		Globals.attHealerR3 = false
+		get_parent().translation.y = -10000
+		get_parent().translation.x = -10000
+		get_parent().translation.z = -10000
+		hpBar.hide()
 
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -64,12 +71,26 @@ func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape
 				$\"../ViewportContainer/Viewport/HealerHitSplat\".show()
 				Globals.attHealer1 = false
 				Globals.attHealer2 = false
-				Globals.attHealer3 = true
+				Globals.attHealer3 = false
 				Globals.attHealer4 = false
 				Globals.attHealer5 = false
 				Globals.attHealer6 = false
+				
+				Globals.attHealerL1 = false
+				Globals.attHealerL2 = false
+				Globals.attHealerL3 = false
+				Globals.attHealerL4 = false
+				Globals.attHealerL5 = false
+				Globals.attHealerL6 = false
+				
+				Globals.attHealerR1 = false
+				Globals.attHealerR2 = false
+				Globals.attHealerR3 = true
+				Globals.attHealerR4 = false
+				Globals.attHealerR5 = false
+				Globals.attHealerR6 = false
 				Globals.attJad = false
-				if get_tree().get_root().get_child(2).has_node(\"JadR\"):
+				if get_tree().get_root().get_child(1).has_node(\"JadR\"):
 					$\"/root/Spatial/JadR/ViewportContainer/Viewport/ProgressBarSprite2/Timer\".stop()
 				$\"../Timer\".start()
 				$\"../ViewportContainer/Viewport/HitTimer\".start()
@@ -126,7 +147,7 @@ var accuracyNum = 3
 func _ready():
 	accuracyRange = rand_range(0,6)
 
-	if Globals.attHealer3:
+	if Globals.attHealerR3:
 		$\"../Healer\".play()
 		hitSplatNum.show()
 		hitSplat.show()
@@ -142,7 +163,7 @@ func _ready():
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
 	
-	if Globals.attHealer3 == true:
+	if Globals.attHealerR3 == true:
 		backSprite.play()
 		hpBar.show()
 	else:
@@ -150,17 +171,9 @@ func _process(_delta):
 		attTimer.stop()
 		hitSplat.hide()
 		hitSplatNum.hide()
-	
-	if hpBar.value <= 0:
-		$\"../../..\".hide()
-		$\"../../..\".transform.origin = Vector3(-107.823, -40, -127.299)
-		hitSplat.hide()
-		hitSplatNum.hide()
-		hpBar.hide()
-
 
 func _on_HitTimer_timeout():
-	if Globals.attHealer3:
+	if Globals.attHealerR3:
 		if Globals.tick == 1:
 			yield($\"/root/Spatial/Timer\", \"timeout\")
 			$\"../Healer\".play()
@@ -239,11 +252,9 @@ shape = SubResource( 1 )
 
 [node name="JadHeal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = 4.273
 
 [node name="Healer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = 13.183
 
 [node name="HealerAggro" type="Node" parent="."]
 script = SubResource( 2 )

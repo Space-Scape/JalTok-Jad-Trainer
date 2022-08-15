@@ -48,7 +48,7 @@ func _on_KinematicBody_input_event(_camera, event, _click_position, _click_norma
 			Globals.attHealer4 = false
 
 func _on_Timer_timeout():
-	if get_tree().get_root().get_child(2).has_node("JadL"):
+	if get_tree().get_root().get_child(1).has_node("JadL"):
 		if Globals.tick == 1:
 			if Globals.attJadL == true:
 				yield($"/root/Spatial/Timer", "timeout")

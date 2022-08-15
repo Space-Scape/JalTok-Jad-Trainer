@@ -14,10 +14,27 @@ var hitNum
 var accuracyRange
 var accuracyNum = 3
 
+func _ready():
+	accuracyRange = rand_range(0,6)
+	
+	if Globals.attHealer1:
+		$"../Healer".play()
+		hitSplatNum.show()
+		hitSplat.show()
+		hpBar.show()
+		if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+			hitNum = rand_range(1, Globals.maxHit)
+			hitSplat.texture = redTex
+		else:
+			hitNum = 0
+			hitSplat.texture = blueTex
+		hitSplatNum.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
+		hpBar.value -= hitNum
+
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
 	
-	if Globals.attHealer1 == true:
+	if Globals.attHealerL1 == true:
 		backSprite.play()
 		hpBar.show()
 	else:
@@ -25,17 +42,9 @@ func _process(_delta):
 		attTimer.stop()
 		hitSplat.hide()
 		hitSplatNum.hide()
-	
-	if hpBar.value <= 0:
-		$"../../..".hide()
-		$"../../..".translation = Vector3(-112.47, -40, -96.504)
-		hitSplat.hide()
-		hitSplatNum.hide()
-		attTimer.stop()
-		hpBar.hide()
 
 func _on_HitTimer_timeout():
-	if Globals.attHealer1:
+	if Globals.attHealerL1:
 		if Globals.tick == 1:
 			yield($"/root/Spatial/Timer", "timeout")
 			$"../Healer".play()

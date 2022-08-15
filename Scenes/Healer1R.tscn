@@ -5,7 +5,6 @@
 [ext_resource path="res://Scripts/HealerAIRight.gd" type="Script" id=3]
 [ext_resource path="res://SFX/hitHealer.wav" type="AudioStream" id=4]
 [ext_resource path="res://SFX/JadHeal.wav" type="AudioStream" id=5]
-[ext_resource path="res://Scripts/HealerHp.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/hitsplatRed.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/redBar.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/HpBar.tres" type="StyleBox" id=10]
@@ -54,6 +53,13 @@ func _process(delta):
 	if Globals.selectTB:
 		cooldown.max_time = 3
 
+	if hpBar.value <= 0:
+		Globals.attHealerR1 = false
+		get_parent().translation.y = -10000
+		get_parent().translation.x = -10000
+		get_parent().translation.z = -10000
+		hpBar.hide()
+
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed == true:
@@ -63,20 +69,33 @@ func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape
 				get_parent().canMoveToPlayer = true
 				$\"../ViewportContainer/Viewport/HpBarSprite\".show()
 				$\"../ViewportContainer/Viewport/HealerHitSplat\".show()
-				Globals.attHealer1 = true
+				Globals.attHealer1 = false
 				Globals.attHealer2 = false
 				Globals.attHealer3 = false
 				Globals.attHealer4 = false
 				Globals.attHealer5 = false
 				Globals.attHealer6 = false
+				
+				Globals.attHealerL1 = false
+				Globals.attHealerL2 = false
+				Globals.attHealerL3 = false
+				Globals.attHealerL4 = false
+				Globals.attHealerL5 = false
+				Globals.attHealerL6 = false
+				
+				Globals.attHealerR1 = true
+				Globals.attHealerR2 = false
+				Globals.attHealerR3 = false
+				Globals.attHealerR4 = false
+				Globals.attHealerR5 = false
+				Globals.attHealerR6 = false
 				Globals.attJad = false
-				if get_tree().get_root().get_child(2).has_node(\"JadR\"):
+				if get_tree().get_root().get_child(1).has_node(\"JadR\"):
 					$\"/root/Spatial/JadR/ViewportContainer/Viewport/ProgressBarSprite2/Timer\".stop()
 				$\"../Timer\".start()
 				$\"../ViewportContainer/Viewport/HitTimer\".start()
 				$\"../JadHeal\".stop()
 				accuracyRange = rand_range(0,6)
-				
 				$\"../Healer\".play()
 				hitSplatNum.show()
 				hitSplat.show()
@@ -107,10 +126,73 @@ texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 554, 55 )
 margin_left = 5.0
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="GDScript" id=6]
+script/source = "extends ProgressBar
+
+onready var blueTex = load(\"res://Sprites/hitsplatBlue.png\")
+onready var redTex = load(\"res://Sprites/hitsplatRed.png\")
+
+onready var backSprite = $\"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3\"
+
+onready var hitSplat = $\"../HealerHitSplat\"
+onready var hitSplatNum = $\"../HealerHitSplat/HitNum\"
+onready var attTimer = $\"../HitTimer\"
+onready var hpBar = self
+
+var hitNum
+var accuracyRange
+var accuracyNum = 3
+
+func _process(_delta):
+	accuracyRange = rand_range(0,6)
+	
+	if Globals.attHealerR1 == true:
+		backSprite.play()
+		hpBar.show()
+	else:
+		backSprite.stop()
+		attTimer.stop()
+		hitSplat.hide()
+		hitSplatNum.hide()
+
+func _on_HitTimer_timeout():
+	if Globals.attHealerR1:
+		if Globals.tick == 1:
+			yield($\"/root/Spatial/Timer\", \"timeout\")
+			$\"../Healer\".play()
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
+			else:
+				hitNum = 0
+				hitSplat.texture = blueTex
+			hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+			hpBar.value -= hitNum
+			yield($\"/root/Spatial/Timer2\", \"timeout\")
+		
+		elif Globals.tick == 2:
+			yield($\"/root/Spatial/Timer\", \"timeout\")
+			$\"../Healer\".play()
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
+			else:
+				hitNum = 0
+				hitSplat.texture = blueTex
+			hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+			hpBar.value -= hitNum
+			yield($\"/root/Spatial/Timer2\", \"timeout\")
+
+"
+
+[sub_resource type="ViewportTexture" id=7]
 viewport_path = NodePath("ViewportContainer/Viewport")
 
-[node name="HealerR" type="KinematicBody"]
+[node name="Healer1R" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37493, 0 )
 collision_layer = 8
 collision_mask = 31
@@ -154,11 +236,9 @@ shape = SubResource( 1 )
 
 [node name="JadHeal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = 4.273
 
 [node name="Healer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 13.183
 
 [node name="HealerAggro" type="Node" parent="."]
 script = SubResource( 2 )
@@ -210,14 +290,14 @@ max_value = 60.0
 step = 1.0
 value = 60.0
 percent_visible = false
-script = ExtResource( 7 )
+script = SubResource( 6 )
 
 [node name="HpBarSprite" type="Sprite3D" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.6, 0, 0, 0, 1.0975, 0, 0, 0, 1.6, 0, 4.06846, 0 )
 visible = false
 flip_v = true
 billboard = 1
-texture = SubResource( 6 )
+texture = SubResource( 7 )
 script = ExtResource( 12 )
 
 [node name="HitTimer" type="Timer" parent="ViewportContainer/Viewport"]

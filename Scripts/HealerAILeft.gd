@@ -33,7 +33,7 @@ func _physics_process(_delta):
 	else:
 		accuracyNum = 4
 
-	if get_tree().get_root().get_child(2).has_node("JadL"):
+	if get_tree().get_root().get_child(1).has_node("JadL"):
 		if global_transform.origin.distance_to(healerCollider.global_transform.origin) < 16 and canMoveToJad:
 			yield($"Heal", "timeout")
 			jadMHPBar.value += 0.1

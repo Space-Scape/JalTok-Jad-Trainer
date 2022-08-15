@@ -34,6 +34,13 @@ func _process(delta):
 		cooldown.max_time = 3
 	if Globals.selectTB:
 		cooldown.max_time = 3
+	
+	if hpBar.value <= 0:
+		Globals.attHealer1 = false
+		get_parent().translation.y = -10000
+		get_parent().translation.x = -10000
+		get_parent().translation.z = -10000
+		hpBar.hide()
 
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -50,8 +57,22 @@ func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape
 				Globals.attHealer4 = false
 				Globals.attHealer5 = false
 				Globals.attHealer6 = false
+				
+				Globals.attHealerL1 = false
+				Globals.attHealerL2 = false
+				Globals.attHealerL3 = false
+				Globals.attHealerL4 = false
+				Globals.attHealerL5 = false
+				Globals.attHealerL6 = false
+				
+				Globals.attHealerR1 = false
+				Globals.attHealerR2 = false
+				Globals.attHealerR3 = false
+				Globals.attHealerR4 = false
+				Globals.attHealerR5 = false
+				Globals.attHealerR6 = false
 				Globals.attJad = false
-				if get_tree().get_root().get_child(2).has_node("Jad"):
+				if get_tree().get_root().get_child(1).has_node("Jad"):
 					$"/root/Spatial/Jad/ViewportContainer/Viewport/ProgressBarSprite2/Timer".stop()
 				$"../Timer".start()
 				$"../ViewportContainer/Viewport/HitTimer".start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
@@ -84,74 +84,74 @@ flags = 4
 viewport_path = NodePath("ViewportContainer2/Viewport2")
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 49 )
-region = Rect2( 305, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 51 )
-region = Rect2( 353, 0, 353, 628 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 51 )
-region = Rect2( 706, 0, 353, 628 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 51 )
-region = Rect2( 0, 0, 353, 628 )
-
-[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 85 )
 region = Rect2( 0, 0, 443, 815 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 85 )
 region = Rect2( 443, 0, 443, 815 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 84 )
-region = Rect2( 0, 0, 325, 677 )
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 84 )
-region = Rect2( 325, 0, 325, 677 )
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 86 )
 region = Rect2( 0, 0, 518, 814 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 86 )
 region = Rect2( 518, 0, 518, 814 )
 
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 51 )
+region = Rect2( 353, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 51 )
+region = Rect2( 706, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 84 )
+region = Rect2( 0, 0, 325, 677 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 84 )
+region = Rect2( 325, 0, 325, 677 )
+
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "BP",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 6 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
-"loop": true,
-"name": "Tbow",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "BoFa",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "ACB",
+"name": "BP",
 "speed": 1.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "RCB",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 10 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Tbow",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
-"name": "RCB",
+"name": "ACB",
 "speed": 1.0
 } ]
 
@@ -388,19 +388,27 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=55]
+[sub_resource type="StyleBoxTexture" id=55]
+texture = ExtResource( 5 )
+region_rect = Rect2( 3.36074, 3.42712, 34.9065, 35.3629 )
+margin_left = 20.9938
+margin_right = 21.0489
+margin_top = 20.8042
+margin_bottom = 21.0816
+
+[sub_resource type="DynamicFont" id=56]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=56]
+[sub_resource type="DynamicFont" id=57]
 outline_size = 1
 extra_spacing_char = 1
 font_data = ExtResource( 10 )
 
-[sub_resource type="Environment" id=57]
+[sub_resource type="Environment" id=58]
 background_mode = 1
 background_color = Color( 0.243137, 0.109804, 0.109804, 1 )
 
@@ -412,10 +420,12 @@ __meta__ = {
 }
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 479.0
 margin_top = 1288.0
-margin_right = 879.0
-margin_bottom = 1438.0
+margin_right = -1041.0
+margin_bottom = 358.0
 rect_scale = Vector2( 1, -1 )
 stretch = true
 __meta__ = {
@@ -569,6 +579,8 @@ __meta__ = {
 zoom_strength = 5.618
 zoom_minimum = -803
 zoom_maximum = 33333.0
+action_zoom_in = "Zoom_+"
+action_zoom_out = "Zoom_-"
 
 [node name="Floor" type="Spatial" parent="."]
 pause_mode = 2
@@ -639,12 +651,15 @@ position = Vector2( 188.344, 100.071 )
 scale = Vector2( 1.67228, 1.67228 )
 z_index = 3
 
-[node name="Column2" type="TextureRect" parent="CanvasLayer/PrayNode"]
+[node name="CanvasLayer3" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
+layer = 3
+
+[node name="Column2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer3"]
 pause_mode = 2
-margin_left = 1005.97
-margin_top = 294.0
-margin_right = 1035.97
-margin_bottom = 585.0
+margin_left = 1871.0
+margin_top = 592.0
+margin_right = 1916.0
+margin_bottom = 1080.0
 texture = ExtResource( 48 )
 expand = true
 __meta__ = {
@@ -652,16 +667,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Column3" type="TextureRect" parent="CanvasLayer/PrayNode"]
+[node name="Column3" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer3"]
 pause_mode = 2
-margin_left = 772.489
-margin_top = 294.0
-margin_right = 802.489
-margin_bottom = 585.0
+margin_left = 1487.34
+margin_top = 592.0
+margin_right = 1532.34
+margin_bottom = 1080.0
 texture = ExtResource( 48 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="PrayPanel" type="TextureRect" parent="CanvasLayer/PrayNode"]
@@ -669,7 +685,11 @@ margin_left = 799.241
 margin_top = 292.044
 margin_right = 1010.24
 margin_bottom = 580.044
+size_flags_horizontal = 2
+size_flags_vertical = 2
 texture = ExtResource( 23 )
+expand = true
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -814,9 +834,9 @@ script = ExtResource( 2 )
 
 [node name="TopTab" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 776.0
-margin_top = 254.0
+margin_top = 253.734
 margin_right = 1034.0
-margin_bottom = 295.0
+margin_bottom = 294.734
 texture = ExtResource( 43 )
 expand = true
 __meta__ = {
@@ -1063,35 +1083,27 @@ anims/TextAnim = SubResource( 41 )
 
 [node name="MagePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 21 )
-volume_db = 16.932
 
 [node name="RangePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 17 )
-volume_db = 19.185
 
 [node name="PrayOff" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 20 )
-volume_db = 17.165
 
 [node name="EagleEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 52 )
-volume_db = 10.097
 
 [node name="SharpEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 54 )
-volume_db = 10.097
 
 [node name="HawkEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 56 )
-volume_db = 10.097
 
 [node name="RigourSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 55 )
-volume_db = 10.097
 
 [node name="PrayDrain" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 53 )
-volume_db = 8.077
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = 2
@@ -1219,14 +1231,14 @@ __meta__ = {
 }
 
 [node name="HpLvl" type="LineEdit" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon"]
-anchor_left = 1.17895
-anchor_top = 0.594216
-anchor_right = 2.53395
-anchor_bottom = 1.28122
-margin_left = 0.459999
-margin_top = -10.0657
-margin_right = 38.52
-margin_bottom = 8.75927
+anchor_left = 1.195
+anchor_top = 0.192
+anchor_right = 2.598
+anchor_bottom = 0.936
+margin_left = 0.0105934
+margin_top = -0.0102983
+margin_right = 36.7266
+margin_bottom = 17.3898
 rect_scale = Vector2( 0.516648, 0.516648 )
 custom_styles/focus = SubResource( 48 )
 custom_styles/normal = SubResource( 49 )
@@ -1514,6 +1526,7 @@ margin_top = 165.573
 margin_right = 700.316
 margin_bottom = 225.573
 rect_scale = Vector2( 0.818234, 0.818234 )
+custom_styles/panel = SubResource( 55 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1530,9 +1543,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MaxHit/Panel"]
-margin_left = 14.5414
+margin_left = 14.2216
 margin_top = 1.80482
-margin_right = 43.5414
+margin_right = 43.2216
 margin_bottom = 42.8049
 texture = ExtResource( 50 )
 expand = true
@@ -1602,7 +1615,7 @@ margin_top = 298.621
 margin_right = 313.786
 margin_bottom = 479.621
 rect_scale = Vector2( 1.55786, 1.55786 )
-custom_fonts/font = SubResource( 55 )
+custom_fonts/font = SubResource( 56 )
 custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1631,7 +1644,7 @@ margin_top = 14.0
 margin_right = 52.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Mobile Controls:"
@@ -1741,7 +1754,7 @@ wait_time = 1.6
 one_shot = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 57 )
+environment = SubResource( 58 )
 [connection signal="input_event" from="Floor/StaticBody" to="KinematicBody" method="_on_StaticBody_input_event"]
 [connection signal="toggled" from="CanvasLayer/PrayNode/MageButton" to="CanvasLayer/PrayNode/Prayers" method="_on_mage_toggled"]
 [connection signal="toggled" from="CanvasLayer/PrayNode/RangedButton" to="CanvasLayer/PrayNode/Prayers" method="_on_ranged_toggled"]

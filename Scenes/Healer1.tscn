@@ -37,7 +37,7 @@ margin_left = 5.0
 [sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("ViewportContainer/Viewport")
 
-[node name="Healer" type="KinematicBody"]
+[node name="Healer1" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37493, 0 )
 collision_layer = 8
 collision_mask = 31
@@ -81,11 +81,9 @@ shape = SubResource( 1 )
 
 [node name="JadHeal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = 4.273
 
 [node name="Healer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 13.183
 
 [node name="HealerAggro" type="Node" parent="."]
 script = ExtResource( 6 )

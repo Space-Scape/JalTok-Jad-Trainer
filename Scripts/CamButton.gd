@@ -5,7 +5,7 @@ var rotate_right
 var zoom_in
 var zoom_out
 
-func _process(delta):
+func _process(_delta):
 	if rotate_left:
 		$"../../Spatial".rotation.y -= 0.025
 	if rotate_right:

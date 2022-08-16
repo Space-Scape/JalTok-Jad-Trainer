@@ -152,7 +152,7 @@ script = ExtResource( 13 )
 
 [node name="Healer" type="AudioStreamPlayer" parent="ViewportContainer/Viewport"]
 stream = ExtResource( 4 )
-volume_db = 13.183
+volume_db = -4.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Heal" to="." method="_on_Timer_timeout"]
 [connection signal="input_event" from="Area" to="HealerAggro" method="_on_Area_input_event"]

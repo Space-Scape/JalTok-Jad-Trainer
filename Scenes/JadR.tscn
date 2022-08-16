@@ -970,6 +970,8 @@ __meta__ = {
 
 [node name="Mage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = -4.0
+pitch_scale = 0.01
 
 [node name="Range" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
@@ -997,6 +999,7 @@ shape = SubResource( 47 )
 
 [node name="JadHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = -4.0
 
 [node name="HitBoxes" type="Area" parent="."]
 pause_mode = 2

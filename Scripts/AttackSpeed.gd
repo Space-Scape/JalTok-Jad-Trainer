@@ -15,6 +15,7 @@ func _on_OptionButton2_item_selected(_index):
 	if selected == 0:
 		Globals.weaponSelect = 0
 		Globals.setDefaults = false
+		Globals.maxHit = 22
 		$"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3".animation = "BP"
 		Globals.playerAnim = "BP"
 		hitLabel.text = str(22)
@@ -27,6 +28,7 @@ func _on_OptionButton2_item_selected(_index):
 		$"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3".animation = "BoFa"
 		Globals.weaponSelect = 1
 		Globals.setDefaults = false
+		Globals.maxHit = 39
 		Globals.playerAnim = "BoFa"
 		hitLabel.text = str(39)
 		Globals.selectBP = false
@@ -39,6 +41,7 @@ func _on_OptionButton2_item_selected(_index):
 		Globals.setDefaults = false
 		$"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3".animation = "RCB"
 		Globals.playerAnim = "RCB"
+		Globals.maxHit = 32
 		hitLabel.text = str(32)
 		Globals.selectBP = false
 		Globals.selectBF = false
@@ -51,6 +54,7 @@ func _on_OptionButton2_item_selected(_index):
 		$"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3".animation = "ACB"
 		Globals.playerAnim = "ACB"
 		hitLabel.text = str(37)
+		Globals.maxHit = 37
 		Globals.selectBP = false
 		Globals.selectBF = false
 		Globals.selectRCB = false
@@ -62,6 +66,7 @@ func _on_OptionButton2_item_selected(_index):
 		$"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3".animation = "Tbow"
 		Globals.playerAnim = "Tbow"
 		hitLabel.text = str(62)
+		Globals.maxHit = 62
 		Globals.selectBP = false
 		Globals.selectBF = false
 		Globals.selectRCB = false

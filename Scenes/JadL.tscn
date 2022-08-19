@@ -42,9 +42,13 @@ func _process(_x):
 			Globals.spawnHealers = true
 			$\"/root/Spatial/JadL/SpawnHealers\".AddHealersL()
 	if get_tree().get_root().get_child(1).has_node(\"JadL\"):
-		if $\"../TextureProgress\".value <= 0:
+		if $\"../TextureProgress\".value < 1:
 			get_tree().get_root().get_child(1).remove_child(JadHealerColliderInstanceL)
-	
+			Globals.hitDmg = false
+			$\"../../../HitBoxes\".num = 0
+			$\"../../../HitBoxes/MageHitbox\".disabled = true
+			$\"../../../Fireball/FireballL/CollisionShape\".disabled = true
+			$\"../../../Boulder/BoulderL/CollisionShape\".disabled = true
 "
 
 [sub_resource type="SpatialMaterial" id=4]

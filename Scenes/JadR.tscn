@@ -42,9 +42,13 @@ func _process(_x):
 			Globals.spawnHealers = true
 			$\"/root/Spatial/JadR/SpawnHealers\".AddHealersR()
 	if get_tree().get_root().get_child(1).has_node(\"JadR\"):
-		if $\"../TextureProgress\".value <= 0:
+		if $\"../TextureProgress\".value < 1:
 			get_tree().get_root().get_child(1).remove_child(JadHealerColliderInstanceR)
-	
+			$\"../../../HitBoxes\".num = 0
+			Globals.hitDmg = false
+			$\"../../../HitBoxes/MageHitbox\".disabled = true
+			$\"../../../Fireball/FireballR/CollisionShape\".disabled = true
+			$\"../../../Boulder/BoulderR/CollisionShape\".disabled = true
 "
 
 [sub_resource type="SpatialMaterial" id=4]
@@ -971,7 +975,6 @@ __meta__ = {
 [node name="Mage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 volume_db = -4.0
-pitch_scale = 0.01
 
 [node name="Range" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )

@@ -18,6 +18,7 @@ func _process(_x):
 			$"../../../HitBoxes".num = 0
 			get_tree().get_root().get_child(1).remove_child(JadHealerColliderInstance)
 			$"../../../HitBoxes/MageHitbox".disabled = true
+			$"../../../RangedHitBox/RangedHitbox".disabled = true
 			$"../../../Fireball/Fireball/CollisionShape".disabled = true
 			$"../../../Boulder/Boulder/CollisionShape".disabled = true
 			

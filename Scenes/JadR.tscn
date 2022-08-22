@@ -47,6 +47,7 @@ func _process(_x):
 			$\"../../../HitBoxes\".num = 0
 			Globals.hitDmg = false
 			$\"../../../HitBoxes/MageHitbox\".disabled = true
+			$\"../../../RangedHitBox/RangedHitbox\".disabled = true
 			$\"../../../Fireball/FireballR/CollisionShape\".disabled = true
 			$\"../../../Boulder/BoulderR/CollisionShape\".disabled = true
 "

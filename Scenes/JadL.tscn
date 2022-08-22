@@ -47,6 +47,7 @@ func _process(_x):
 			Globals.hitDmg = false
 			$\"../../../HitBoxes\".num = 0
 			$\"../../../HitBoxes/MageHitbox\".disabled = true
+			$\"../../../RangedHitBox/RangedHitbox\".disabled = true
 			$\"../../../Fireball/FireballL/CollisionShape\".disabled = true
 			$\"../../../Boulder/BoulderL/CollisionShape\".disabled = true
 "
@@ -1049,9 +1050,6 @@ shape = SubResource( 49 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="SpawnHealers" type="Node" parent="RangedHitBox"]
-script = ExtResource( 5 )
 
 [node name="MeleeDistance" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.167953, 0, 0, 0, 1, 0, 1.40015, 1.1889 )

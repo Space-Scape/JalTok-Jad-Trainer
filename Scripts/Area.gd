@@ -13,138 +13,142 @@ onready var hpBar = $"/root/Spatial/ViewportContainer2/Viewport2/ProgressBar"
 onready var hpOrb = $"/root/Spatial/CanvasLayer/PrayNode/OrbContainer2/HpBar"
 
 func _on_HitBoxes_area_exited(area):
-	num = rand_range(1, jadHit)
-	
-	if Globals.tick == 1:
-		if Globals.prayingMage and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
-			hitSplat.show()
-			Globals.hitDmg = false
-			numContainer.bbcode_text = ""
-		if Globals.prayingRange and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
-			hitSplat.show()
-			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			Globals.hitDmg = true
-			if Globals.ate:
-				if hpBar.value <= num:
-					hpBar.value -= num
-					hpOrb.value -= num
-					hpBar.value = 1
-					hpOrb.value = 1
+	if get_tree().get_root().get_child(1).has_node("Jad"):
+		if $"../ViewportContainer/Viewport/TextureProgress".value >= 1:
+			num = rand_range(1, jadHit)
+			
+			if Globals.tick == 1:
+				if Globals.prayingMage and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
+					hitSplat.show()
+					Globals.hitDmg = false
+					numContainer.bbcode_text = ""
+				if Globals.prayingRange and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatRed.png")
+					hitSplat.show()
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-				else:
-					hpBar.value -= num
-					hpOrb.value -= num
+					Globals.hitDmg = true
+					if Globals.ate:
+						if hpBar.value <= num:
+							hpBar.value -= num
+							hpOrb.value -= num
+							hpBar.value = 1
+							hpOrb.value = 1
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+						else:
+							hpBar.value -= num
+							hpOrb.value -= num
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					else:
+						hpBar.value -= num
+						hpOrb.value -= num
+						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				if Globals.prayingMelee and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatRed.png")
+					hitSplat.show()
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			else:
-				hpBar.value -= num
-				hpOrb.value -= num
-				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-		if Globals.prayingMelee and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
-			hitSplat.show()
-			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			Globals.hitDmg = true
-			if Globals.ate:
-				if hpBar.value <= num:
-					hpBar.value -= num
-					hpOrb.value -= num
-					hpBar.value = 1
-					hpOrb.value = 1
+					Globals.hitDmg = true
+					if Globals.ate:
+						if hpBar.value <= num:
+							hpBar.value -= num
+							hpOrb.value -= num
+							hpBar.value = 1
+							hpOrb.value = 1
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+						else:
+							hpBar.value -= num
+							hpOrb.value -= num
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					else:
+						hpBar.value -= num
+						hpOrb.value -= num
+						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				if Globals.prayOff and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatRed.png")
+					hitSplat.show()
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-				else:
-					hpBar.value -= num
-					hpOrb.value -= num
+					Globals.hitDmg = true
+					if Globals.ate:
+						if hpBar.value <= num:
+							hpBar.value -= num
+							hpOrb.value -= num
+							hpBar.value = 1
+							hpOrb.value = 1
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+						else:
+							hpBar.value -= num
+							hpOrb.value -= num
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					else:
+						hpBar.value -= num
+						hpOrb.value -= num
+						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				
+			elif Globals.tick == 2:
+				if Globals.prayingMage and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
+					hitSplat.show()
+					Globals.hitDmg = false
+					numContainer.bbcode_text = ""
+				if Globals.prayingRange and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatRed.png")
+					hitSplat.show()
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			else:
-				hpBar.value -= num
-				hpOrb.value -= num
-				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-		if Globals.prayOff and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
-			hitSplat.show()
-			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			Globals.hitDmg = true
-			if Globals.ate:
-				if hpBar.value <= num:
-					hpBar.value -= num
-					hpOrb.value -= num
-					hpBar.value = 1
-					hpOrb.value = 1
+					Globals.hitDmg = true
+					if Globals.ate:
+						if hpBar.value <= num:
+							hpBar.value -= num
+							hpOrb.value -= num
+							hpBar.value = 1
+							hpOrb.value = 1
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+						else:
+							hpBar.value -= num
+							hpOrb.value -= num
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					else:
+						hpBar.value -= num
+						hpOrb.value -= num
+						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				if Globals.prayingMelee and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatRed.png")
+					hitSplat.show()
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-				else:
-					hpBar.value -= num
-					hpOrb.value -= num
+					Globals.hitDmg = true
+					if Globals.ate:
+						if hpBar.value <= num:
+							hpBar.value -= num
+							hpOrb.value -= num
+							hpBar.value = 1
+							hpOrb.value = 1
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+						else:
+							hpBar.value -= num
+							hpOrb.value -= num
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					else:
+						hpBar.value -= num
+						hpOrb.value -= num
+						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				if Globals.prayOff and area.get_name() == "Fireball":
+					hitSplat.texture = load("res://Sprites/hitsplatRed.png")
+					hitSplat.show()
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			else:
-				hpBar.value -= num
-				hpOrb.value -= num
-				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-		
-	elif Globals.tick == 2:
-		if Globals.prayingMage and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
-			hitSplat.show()
-			Globals.hitDmg = false
-			numContainer.bbcode_text = ""
-		if Globals.prayingRange and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
-			hitSplat.show()
-			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			Globals.hitDmg = true
-			if Globals.ate:
-				if hpBar.value <= num:
-					hpBar.value -= num
-					hpOrb.value -= num
-					hpBar.value = 1
-					hpOrb.value = 1
-					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-				else:
-					hpBar.value -= num
-					hpOrb.value -= num
-					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			else:
-				hpBar.value -= num
-				hpOrb.value -= num
-				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-		if Globals.prayingMelee and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
-			hitSplat.show()
-			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			Globals.hitDmg = true
-			if Globals.ate:
-				if hpBar.value <= num:
-					hpBar.value -= num
-					hpOrb.value -= num
-					hpBar.value = 1
-					hpOrb.value = 1
-					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-				else:
-					hpBar.value -= num
-					hpOrb.value -= num
-					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			else:
-				hpBar.value -= num
-				hpOrb.value -= num
-				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-		if Globals.prayOff and area.get_name() == "Fireball":
-			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
-			hitSplat.show()
-			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			Globals.hitDmg = true
-			if Globals.ate:
-				if hpBar.value <= num:
-					hpBar.value -= num
-					hpOrb.value -= num
-					hpBar.value = 1
-					hpOrb.value = 1
-					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-				else:
-					hpBar.value -= num
-					hpOrb.value -= num
-					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
-			else:
-				hpBar.value -= num
-				hpOrb.value -= num
-				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					Globals.hitDmg = true
+					if Globals.ate:
+						if hpBar.value <= num:
+							hpBar.value -= num
+							hpOrb.value -= num
+							hpBar.value = 1
+							hpOrb.value = 1
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+						else:
+							hpBar.value -= num
+							hpOrb.value -= num
+							numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+					else:
+						hpBar.value -= num
+						hpOrb.value -= num
+						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+		else:
+			num = 0
